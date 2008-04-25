@@ -1,39 +1,76 @@
-NAME = sobre-contornos
-USE_DVIPDFM = 1
+maindir=$(shell pwd)
 
-FIGSDIR = figs
-DATADIR = data
+file = sobre-contornos
+out = out
+figs = figs
+figs-out = figs-out
+data = data
 
-OTHER_EPS1= $(patsubst %.dia,%.eps,$(wildcard $(FIGSDIR)/*.dia))
-OTHER_EPS2= $(patsubst %.svg,%.eps,$(wildcard $(FIGSDIR)/*.svg))
-OTHER_EPS3= $(patsubst %.plot,%.eps,$(wildcard $(DATADIR)/*.plot))
-OTHER+= $(OTHER_EPS1) $(OTHER_EPS2) $(OTHER_EPS3)
-CLEAN_FILES+= $(OTHER_EPS2:.plot=.eps)
-CLEAN_FILES+= $(OTHER_EPS3:.svg=.eps)
-CLEAN_FILES+= diff.* 1.tex 2.tex
+figures = $(shell dir $(figs)/*.*)
+graphs = $(shell dir $(data)/*.*)
+all-figs = $(addsuffix .eps,$(notdir $(basename $(figures))))
+all-graphs = $(addsuffix .eps,$(notdir $(basename $(graphs))))
 
--include /usr/share/latex-mk/latex.gmk
+vpath %.eps $(out)
+vpath %.ly $(figs)
+vpath %.eps $(figs-out)
+vpath %.dia $(figs)
+vpath %.plot $(data)
+vpath %.data $(data)
+vpath %.svg $(figs)
+vpath %.pdf $(figs)
+vpath %.sty config
 
-diff:
-	git show HEAD^:$(NAME).tex > 1.tex
-	git show HEAD:$(NAME) > 2.tex
-	latexdiff-so 1.tex 2.tex > da.tex
-	latex diff.tex
-	bibtex diff
-	latex diff.tex
-	latex diff.tex
+dvi: $(all-figs) $(all-graphs) $(file).dvi $(file).tex
+ps:  $(all-figs) $(all-graphs) $(file).ps $(file).tex
+pdf:  $(all-figs) $(all-graphs) $(file).pdf $(file).tex
 
-%.txt: %.tex
-	detex $< > $@
+purge: cleanall
+	rm -f $(file).{ps,pdf}
 
-%.eps: %.plot %.data
-	gnuplot $<
+cleanall: clean cleanbib
+	rm -f $(file).{dvi,log}
+
+cleanbib:
+	rm -f $(file).{aux,bbl,blg,gl*,ist}
+
+clean:
+	rm -rf $(figs-out)
+	rm -rf out
+	rm -rf $(svg-figs)
+
+cleanlight:
+	rm -rf $(figs-out)/tmp
+
+%.dvi: %.tex
+	latex $<
+	bibtex $(basename $<)
+	makeindex -s $(basename $<).ist -t $(basename $<).glg -o $(basename $<).gls $(basename $<).glo
+	latex $<
+	latex $<
+
+%.ps: %.dvi
+	dvips -o $@ $<
+
+%.pdf: %.ps
+	ps2pdf -sPAPERSIZE=a4 $<
 
 %.eps: %.svg
-	inkscape -T --export-eps=$@ $<
+	mkdir -p $(figs-out) ;\
+	inkscape -E $(figs-out)/$@ $<
 
 %.eps: %.dia
-	dia --export=$@ $<
+	mkdir -p $(figs-out) ;\
+	dia --nosplash  -t eps --export=$(figs-out)/$@ $<
 
-push: ps
-	git push
+%.eps: %.ly
+	mkdir -p $(figs-out)/tmp ;\
+	cp $< $(figs-out)/tmp ;\
+	cd $(figs-out)/tmp ;\
+	lilypond -b eps --preview $(notdir $<) ;\
+	mv $(notdir $(basename $<)).preview.eps ../$(notdir $(basename $<)).eps ;\
+
+%.eps: %.plot %.data
+	mkdir -p $(figs-out) ;\
+	gnuplot $<
+	mv $(notdir $@) $(figs-out)
