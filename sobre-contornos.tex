@@ -1,12 +1,5 @@
 \documentclass{article}
-\usepackage{ifthen}
-\usepackage[utf8,utf8x]{inputenc}
-\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
-\usepackage[brazil]{babel}
-\usepackage{setspace}
-\usepackage{graphicx}
-\usepackage{url}
-\usepackage{colortbl}
+\usepackage{anppom2008}
 
 % usar para termos estrangeiros
 \newcommand{\eng}[1]{\textit{#1}}
@@ -25,19 +18,25 @@
   #1\textsuperscript{o} t
 }
 
-\title{Sobre Contornos}
-\author{Marcos di Silva}
 
 \begin{document}
+\graphicspath{{figs-out/}{out/}}
 
-\setlength{\parindent}{0cm}
-\maketitle
-\thispagestyle{empty}
+\title{Software para processar contornos}
+\author{Marcos da Silva Sampaio e Pedro Kröger}{Universidade Federal
+  da Bahia}{{mdsmus,pedro.kroeger}@gmail.com}{genos.mus.br}
 
-%% descrever a pesquisa: aplicação de teoria dos contornos em
-%% composição. incluir o goiaba
+\begin{sumario}
+  Resumo do texto com até 100 palavras.  
+\end{sumario}
 
-\bibliography{melodic-contour}
-\bibliographystyle{plain}
+\keywords{Contornos, Computação musical, Composição, Lisp}
+
+\section{Introdução}
+\label{sec:introducao}
+
+\renewcommand{\refname}{Referências Bibliográficas}
+\bibliography{music-harmony-and-theory,music-history,melodic-contour,music-analysis,music-scores,music-perception}
+\bibliographystyle{kchicago}
 
 \end{document}
