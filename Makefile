@@ -1,5 +1,11 @@
 maindir=$(shell pwd)
 
+unexport BSTINPUTS
+unexport TEXINPUTS
+
+export BSTINPUTS=:config:bib:out:
+export TEXINPUTS=:config:out:
+
 file = sobre-contornos
 out = out
 figs = figs
@@ -13,6 +19,9 @@ all-graphs = $(addsuffix .eps,$(notdir $(basename $(graphs))))
 
 vpath %.eps $(out)
 vpath %.ly $(figs)
+vpath %.jpg $(figs)
+vpath %.png $(figs)
+vpath %.tiff $(figs)
 vpath %.eps $(figs-out)
 vpath %.dia $(figs)
 vpath %.plot $(data)
@@ -45,7 +54,6 @@ cleanlight:
 %.dvi: %.tex
 	latex $<
 	bibtex $(basename $<)
-	makeindex -s $(basename $<).ist -t $(basename $<).glg -o $(basename $<).gls $(basename $<).glo
 	latex $<
 	latex $<
 
@@ -74,3 +82,15 @@ cleanlight:
 	mkdir -p $(figs-out) ;\
 	gnuplot $<
 	mv $(notdir $@) $(figs-out)
+
+%.eps: %.jpg
+	mkdir -p $(figs-out) ;\
+	convert $< $(figs-out)/$@
+
+%.eps: %.png
+	mkdir -p $(figs-out) ;\
+	convert $< $(figs-out)/$@
+
+%.eps: %.tiff
+	mkdir -p $(figs-out) ;\
+	convert $< $(figs-out)/$@
