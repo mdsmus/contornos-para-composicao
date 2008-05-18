@@ -35,19 +35,45 @@
 \section{Introdução}
 \label{sec:introducao}
 
-Teorias que visam sistematizar o estudo de contornos têm sido
-desenvolvidas desde a década de 1980 por Michael Friedmann
-\cite{friedmann85:methodology,friedmann87:response}, Robert Morris
-\cite{morris87:composition,morris93:directions}, Elizabeth Marvin e
-Paul Laprade \cite{marvin.ea87:relating}, e Robert Clifford
-\cite{clifford95:contour}.
+%% falar sobre criação de material a partir de operações e falar de
+%% operações de contorno
+Ao longo da história da música compositores têm criado material
+composicional a partir de operações como transposição, inversão e
+retrogradação de estruturas como motivos, conjuntos ou séries de
+notas.
+
+O presente trabalho faz parte de uma pesquisa maior na qual é proposta
+a criação de material composicional a partir de operações com
+contornos melódicos.
+
+Um software para processar contornos melódicos e retornar operações
+pode contribuir significativamente com a pesquisa de composição a
+partir de contornos. O Processador de Classe de Notas
+\cite{oliveira01:pcn} é um exemplo de software criado para o mesmo
+fim.
+
+Contorno pode ser definido como o perfil, desenho ou formato de um
+objeto. Pode ser bidimensional e associar altura a comprimento,
+largura ou tempo. Em música contornos podem ser associados a altura,
+densidade, ritmo, complexidade rítmica, homogeneidade orquestral,
+amplitude de harmônicos, intensidade, etc. Contornos melódicos estão
+relacionados com movimento de altura em função do tempo.
 
 Diversas definições de contorno melódico foram feitas por autores como
-Piston, Toch, Schönberg, Adams, Marvin, Morris, Clifford e Beard. Cada
-uma destas definições está relacionada com o objetivo do trabalhos
-destes autores. Para o presente estudo preferimos entender que
-contorno melódico é o conjunto ordenado dos movimentos ascendentes,
-descendentes, e nulos entre as notas de uma melodia.
+Piston \cite{piston59:harmony}, Toch \cite{toch77:shaping}, Schönberg
+\cite{schonberg:fundamentals}, Adams \cite{adams76:melodic}, Marvin e
+Laprade \cite{marvin.ea87:relating}, Morris
+\cite{morris87:composition}, Clifford \cite{clifford95:contour} e
+Beard \cite{beard03:contour}. Cada uma destas definições está
+relacionada com o objetivo do trabalhos destes autores. No presente
+estudo preferimos entender que contorno melódico é o conjunto ordenado
+dos movimentos ascendentes, descendentes, e nulos entre as notas de
+uma melodia.
+
+Em composição o contorno melódico é um elemento de nível médio de
+abstração, entre altura, duração e timbre, e motivos e frases. Sua
+presença na música é tão comum quanto a de qualquer outro elemento
+citado.
 
 A idéia de preservação de contorno e variação de intervalos entre
 notas é encontrada em diferentes situações musicais. Há adequação de
@@ -67,6 +93,49 @@ que na semelhança de alturas. Por isso novas teorias para comparação
 de contornos se tornaram necessárias à área da Análise Musical
 \cite[p. 226]{marvin.ea87:relating}.
 
+%% falar do uso de contorno como de determinante composicionais
+
+Na falta de outros sistemas dominantes de organização de alturas,
+contorno representa um fator estrutural igual em importância às
+relações da Teoria dos Conjuntos \cite[p. 157]{clifford95:contour}.
+Dessa forma a análise com uso das ferramentas das teorias de contornos
+se mostra adequada.
+
+%% falar da proposta do mestrado: usar operações de contorno melódico
+%% para gerar material composicional
+
+
+\section{Teorias de contornos}
+\label{sec:teorias-de-contornos}
+
+Teorias que visam sistematizar o estudo de contornos têm sido
+desenvolvidas desde a década de 1980 por Friedmann
+\cite{friedmann85:methodology,friedmann87:response}, Morris
+\cite{morris87:composition,morris93:directions}, Marvin e Laprade
+\cite{marvin.ea87:relating}, Clifford \cite{clifford95:contour},
+Polansky e Bassein \cite{polansky.ea92:possible}, Quinn
+\cite{quinn97:fuzzy} e Beard \cite{beard03:contour}.
+
+A música pode ser entendida a partir de diferentes espaços: de altura,
+de contorno, de timbre, de ritmo \cite{morris87:composition}. De todos
+esses, o espaço de contorno (\eng{c-space}) é o mais importante para o
+nosso estudo. Trata-se de uma abstração de espaço musical que consiste
+em elementos organizados do grave para o agudo desconsiderando os
+intervalos exatos entre eles.
+
+Uma composição pode ser entendida como uma matriz de características
+rítmicas, de classe de notas, de contornos e de timbre. As relações
+entre contorno e classe de notas podem ser abordadas de duas maneiras:
+considerando possíveis associações entre conjuntos e contornos, ou
+tratando conjuntos de notas e contornos de forma autônoma
+\cite{friedmann85:methodology}.
+
+Contornos são representados por letras maiúsculas e seus elementos por
+numerais subscritos. Estes numerais representam a posição destes
+elementos em ordem temporal de aparecimento no contorno. Por exemplo,
+em um contorno $P\:\langle5\:9\:6\:8\rangle$, $P_0 = 5$, $P_1 = 9$,
+$P_2 = 6$, e $P_3 = 8$.
+
 \section{O software}
 \label{sec:o-software}
 
@@ -77,7 +146,7 @@ de contornos se tornaram necessárias à área da Análise Musical
 \label{sec:comp-com-cont}
 
 \renewcommand{\refname}{Referências Bibliográficas}
-\bibliography{music-harmony-and-theory,music-history,melodic-contour,music-analysis,music-scores,music-perception}
+\bibliography{music-harmony-and-theory,music-history,melodic-contour,music-analysis,music-scores,music-perception,composition,programs}
 \bibliographystyle{kchicago}
 
 \end{document}
