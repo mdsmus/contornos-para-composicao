@@ -32,9 +32,6 @@
 
 \keywords{Contornos, Computação musical, Composição, Lisp}
 
-\section{Introdução}
-\label{sec:introducao}
-
 %% divisão de trabalho
 
 %% por que contornos são importantes
@@ -51,15 +48,8 @@
 %% falar sobre criação de material a partir de operações e falar de
 %% operações de contorno
 
-O presente trabalho faz parte de uma pesquisa maior na qual é proposta
-a criação de material composicional a partir de operações com
-contornos melódicos.
-
-Um software para processar contornos melódicos e retornar operações
-pode contribuir significativamente com a pesquisa de composição a
-partir de contornos. O Processador de Classe de Notas
-\cite{oliveira01:pcn} é um exemplo de software criado para o mesmo
-fim.
+\section{Introdução}
+\label{sec:introducao}
 
 Contorno pode ser definido como o perfil, desenho ou formato de um
 objeto. Pode ser bidimensional e associar altura a comprimento,
@@ -71,14 +61,22 @@ relacionados com movimento de altura em função do tempo.
 Há diversas definições de contorno melódico na literatura
 \cite{piston59:harmony,toch77:shaping,schonberg:fundamentals,adams76:melodic,marvin.ea87:relating,morris87:composition,clifford95:contour,beard03:contour}. Cada
 uma destas definições está relacionada com o objetivo do trabalhos de
-autores. No presente estudo preferimos entender que contorno melódico
-é o conjunto ordenado dos movimentos ascendentes, descendentes, e
-nulos entre as notas de uma melodia.
+seus autores. No presente estudo preferimos entender que contorno
+melódico é o conjunto ordenado dos movimentos ascendentes,
+descendentes, e nulos entre as notas de uma melodia.
 
-Em composição o contorno melódico é um elemento de nível médio de
-abstração, entre altura, duração e timbre, e motivos e frases. Sua
-presença na música é tão comum quanto a de qualquer outro elemento
-citado.
+%% por que contornos são importantes
+
+O estudo de contornos é importante porque, assim como conjuntos de
+notas e motivos, contornos ajudam a dar coerência musical a uma
+obra. Eles representam estruturas musicais manipuláveis através de
+várias operações como inversão e retrogradação. Contornos podem ser
+abordados tanto do ponto de vista da análise, quanto da composição.
+
+Na música pré-serial de Webern, por exemplo, na falta de outros
+sistemas dominantes de organização de alturas, contorno representa um
+fator estrutural igual em importância às relações da Teoria dos
+Conjuntos \cite[p. 157]{clifford95:contour}.
 
 A idéia de preservação de contorno e variação de intervalos entre
 notas é encontrada em diferentes situações musicais. Há adequação de
@@ -98,17 +96,14 @@ que na semelhança de alturas. Por isso novas teorias para comparação
 de contornos se tornaram necessárias à área da Análise Musical
 \cite[p. 226]{marvin.ea87:relating}.
 
-%% falar do uso de contorno como de determinante composicionais
+%% criação de um programa para ajudar na compreensão de contornos
 
-Na falta de outros sistemas dominantes de organização de alturas,
-contorno representa um fator estrutural igual em importância às
-relações da Teoria dos Conjuntos \cite[p. 157]{clifford95:contour}.
-Dessa forma a análise com uso das ferramentas das teorias de contornos
-se mostra adequada.
-
-%% falar da proposta do mestrado: usar operações de contorno melódico
-%% para gerar material composicional
-
+O presente trabalho faz parte de uma pesquisa maior na qual é proposta
+a criação de material composicional a partir de operações com
+contornos melódicos. Um software para processar contornos melódicos e
+retornar operações pode contribuir significativamente com a citada
+pesquisa. O Processador de Classe de Notas \cite{oliveira01:pcn} é um
+exemplo de software criado para o mesmo fim.
 
 \section{Teorias de contornos}
 \label{sec:teorias-de-contornos}
