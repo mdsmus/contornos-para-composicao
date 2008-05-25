@@ -63,7 +63,7 @@ Há diversas definições de contorno melódico na literatura
 \cite{piston59:harmony,toch77:shaping,schonberg:fundamentals,adams76:melodic,marvin.ea87:relating,morris87:composition,clifford95:contour,beard03:contour}. Cada
 uma destas definições está relacionada com o objetivo do trabalhos de
 seus autores. No presente estudo preferimos entender que contorno
-melódico é o conjunto ordenado dos movimentos ascendentes,
+melódico é um conjunto ordenado dos movimentos ascendentes,
 descendentes, e nulos entre as notas de uma melodia.
 
 %% por que contornos são importantes
@@ -109,7 +109,6 @@ exemplo de software criado para o mesmo fim.
 \section{Teorias de contornos}
 \label{sec:teorias-de-contornos}
 
-%% FIXME: remover informação histórica
 Teorias que visam sistematizar o estudo de contornos dispõem de várias
 operações para mapeamento e comparação de contornos
 \cite{friedmann85:methodology,friedmann87:response,morris87:composition,morris93:directions,marvin.ea87:relating,clifford95:contour,polansky.ea92:possible,quinn97:fuzzy,beard03:contour}.
@@ -127,45 +126,42 @@ considerando possíveis associações entre conjuntos e contornos, ou
 tratando conjuntos de notas e contornos de forma autônoma
 \cite{friedmann85:methodology}.
 
-Contornos são representados por letras maiúsculas e seus elementos por
-numerais subscritos. Estes numerais representam a posição destes
-elementos em ordem temporal de aparecimento no contorno. Por exemplo,
-em um contorno $P\:\langle5\:9\:6\:8\rangle$, $P_0 = 5$, $P_1 = 9$,
-$P_2 = 6$, e $P_3 = 8$.
+Por definição contornos são ordenados, e representados por letras
+maiúsculas e seus elementos por numerais subscritos. Estes numerais
+representam a posição destes elementos em ordem temporal de
+aparecimento no contorno \cite{marvin.ea87:relating}. Por exemplo, em
+um contorno $P\:\langle5\:9\:6\:8\rangle$, $P_0$ é igual a 5, $P_1$ é
+igual a 9, $P_2$ é igual a 6, e $P_3$ é igual a 8.
 
-\termo{C-space} pode ser entendido como um grande conjunto de
-\termo{c-pitch} (alturas de contorno). Um contorno, porém, é por
-definição ordenado \cite{marvin.ea87:relating,morris87:composition},
-assim, cada contorno contido em um \termo{c-space} é chamado de
-\termo{cseg} (segmento de contorno)\footnote{Trata-se de uma idéia
-  semelhante à da geometria, de reta e segmento de reta, onde o
-  \termo{c-space} seria análogo à reta, e o \termo{cseg} ao segmento
-  de reta.}. Subconjuntos de \termo{cseg} são chamados
-\termo{csubseg}, e podem conter elementos contíguos ou não do
-\termo{cseg} que os contém.
+\eng{C-space} pode ser entendido como um grande conjunto de
+\eng{c-pitch} (alturas de contorno). Cada contorno contido em um
+\eng{c-space} é chamado de \eng{cseg} (segmento de
+contorno)\footnote{Trata-se de uma idéia semelhante à da geometria, de
+  reta e segmento de reta, onde o \eng{c-space} seria análogo à reta,
+  e o \eng{cseg} ao segmento de reta.}. Subconjuntos de \eng{cseg} são
+chamados \eng{csubseg}, e podem conter elementos contíguos ou não do
+\eng{cseg} que os contém.
 
-%% FIXME: usar "com" entre as funções
 Relações de similaridade \cite{marvin.ea87:relating} são analisadas
-com a função de comparação \termo{com}, a matriz de comparação
-(\termo{com-matrix}), as formas normal e prima, e a classe de contorno
-(\termo{cc}), a função de similaridade \termo{csim}, e a função de
-contorno embutido \termo{cemb}. As operações com contorno são
+com a função de comparação \eng{com}, com a matriz de comparação
+(\eng{com-matrix}), com as formas normal e prima, com a classe de
+contorno (\eng{cc}), com a função de similaridade \eng{csim}, e com a
+função de contorno embutido \eng{cemb}. As operações com contorno são
 identidade (P), inversão (I), retrogradação (R), retrogradação da
 inversão (RI) e translação.
 
-%% FIXME: tirar o "se". Tirar vírgula após 5 9 6 8. tirar parênteses
-%% da referência à equação
-A função de comparação \termo{com} mede a diferença de registro entre
-dois elementos, ou seja, se um elemento é mais agudo, mais grave ou de
-mesma altura que outro. O valor de \termo{com} é o sinal ``$+$'' se
-$a$ é menor que $b$; ``$-$'' se $a$ é maior que $b$; e ``$0$'' se $a$
-é igual a $b$. Por exemplo, no contorno $P\:\langle5\:9\:6\:8\rangle$,
-o valor de $COM(P_0,P_1)$ é o sinal ``$+$'', o de $COM(P_1,P_2)$ é
-``$-$'', e o valor de $COM(P_3,P_0)$ é o sinal ``$+$''. Esta medida de
-comparação pode ser invertida de modo que a comparação entre dois
-elementos é igual ao inverso da comparação destes elementos em ordem
-reversa. Esta idéia pode ser melhor entendida observando-se a equação
-(\ref{eq:inversao-da-comparacao}).
+%% FIXME: tirar parênteses da referência à equação
+A função de comparação \eng{com} mede a diferença de registro entre
+dois elementos, ou seja, informa se um elemento é mais agudo, mais
+grave ou de mesma altura que outro. O valor de \eng{com} é o sinal
+``$+$'' se $a$ é menor que $b$; ``$-$'' se $a$ é maior que $b$; e
+``$0$'' se $a$ é igual a $b$. Por exemplo, no contorno
+$P\:\langle5\:9\:6\:8\rangle$, o valor de $COM(P_0,P_1)$ é o sinal
+``$+$'', o de $COM(P_1,P_2)$ é ``$-$'', e o valor de $COM(P_3,P_0)$ é
+o sinal ``$+$''. Esta medida de comparação pode ser invertida de modo
+que a comparação entre dois elementos é igual ao inverso da comparação
+destes elementos em ordem reversa. Esta idéia pode ser melhor
+entendida observando-se a equação (\ref{eq:inversao-da-comparacao}).
 
 \begin{equation}
   \label{eq:inversao-da-comparacao}
@@ -329,7 +325,6 @@ $\langle2,1,1/1,1,0\rangle$. Os dígitos da esquerda da barra
 representam os \termo{ci} ascendentes em ordem crescente, e os dígitos
 da direita os \termo{ci} descendentes em ordem crescente de valor
 absoluto.
-
 
 \section{O software}
 \label{sec:o-software}
