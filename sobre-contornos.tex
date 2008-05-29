@@ -53,22 +53,19 @@ amplitude de harmônicos, intensidade, etc. Contornos melódicos estão
 relacionados com movimento de altura em função do tempo.
 
 Há diversas definições de contorno melódico na literatura
-\cite{piston59:harmony,toch77:shaping,schonberg:fundamentals,adams76:melodic,marvin.ea87:relating,morris87:composition,clifford95:contour,beard03:contour}.
-Cada uma destas definições está relacionada com o objetivo do
-trabalhos de seus autores. \note{merge 2 frases anteriores} No
-presente estudo preferimos entender que contorno melódico é um
-conjunto ordenado dos movimentos ascendentes, descendentes, e nulos
-entre as notas de uma melodia.
+\cite{piston59:harmony,toch77:shaping,schonberg:fundamentals,adams76:melodic,marvin.ea87:relating,morris87:composition,clifford95:contour,beard03:contour},
+cada uma delas relacionada com o objetivo do trabalhos de seus
+autores. No presente estudo preferimos entender que contorno melódico
+é um conjunto ordenado dos movimentos ascendentes, descendentes, e
+nulos entre as notas de uma melodia.
 
 %% por que contornos são importantes
 
 O estudo de contornos é importante porque, assim como conjuntos de
-notas e motivos, contornos ajudam a dar coerência musical a uma obra.
-\note{as 2 palavras ``contornos'' na frase esta ruim} Eles representam
-estruturas musicais manipuláveis através de várias operações como
-inversão e retrogradação. Contornos podem ser abordados tanto do ponto
-de vista da análise quanto da composição. \note{merge com frase
-  anterior}
+notas e motivos, ajudam a dar coerência musical a uma obra. Eles
+representam estruturas musicais manipuláveis através de várias
+operações como inversão e retrogradação, e podem ser abordados tanto
+do ponto de vista da análise quanto da composição.
 
 Na música pré-serial de Webern, por exemplo, na falta de outros
 sistemas dominantes de organização de alturas, contorno representa um
@@ -84,15 +81,16 @@ citando apenas alguns exemplos
 intervalos são pouco a pouco expandidos ou contraídos, como por
 exemplo ocorre no início da \opus{Música para Cordas, Percussão e
   Celesta}, de Béla Bartók. \note{nao esta clara a relacao dessa obra
-  com contornos} 
+  com contornos. marcos: ela não está relacionada com contornos, mas
+  com expansão de intervalos} 
 
 No campo da percepção musical contorno melódico é uma importante
 característica para o reconhecimento de melodias familiares \cite[p.
-136]{dowling.ea86:music}. Alguns teóricos reconhecem \note{isso esta
-  estranho} que ouvintes têm maior acuidade na percepção de semelhança
-de contornos do que na semelhança de alturas. Por isso novas teorias
-para comparação de contornos se tornaram necessárias à área da Análise
-Musical \cite[p. 226]{marvin.ea87:relating}.
+136]{dowling.ea86:music}. É reconhecido que ouvintes têm maior
+acuidade na percepção de semelhança de contornos do que na semelhança
+de alturas. Por isso novas teorias para comparação de contornos se
+tornaram necessárias à área da Análise Musical
+\cite[p. 226]{marvin.ea87:relating}.
 
 %% criação de um programa para ajudar na compreensão de contornos
 
@@ -100,10 +98,9 @@ O presente trabalho faz parte de uma pesquisa maior na qual é proposta
 a criação de material composicional a partir de operações com
 contornos melódicos. Um software para processar contornos melódicos e
 retornar operações pode contribuir significativamente com a citada
-pesquisa. O Processador de Classe de Notas \cite{oliveira01:pcn} é um
-exemplo de software criado para o mesmo fim. \note{o pcn nao é para o
-  mesmo fim (eu sugiro tirar), esse paragrafo tem que falar qual o
-  objetivo do artigo.} 
+pesquisa. Com este artigo pretendemos descrever as funcionalidades e o
+estado do desenvolvimento do Goiaba, o software que estamos
+desenvolvendo para processar contornos melódicos.
 
 \section{Teorias de contornos}
 \label{sec:teorias-de-contornos}
@@ -118,20 +115,6 @@ altura e de contorno \cite{morris87:composition}. O espaço de contorno
 elementos organizados do grave para o agudo desconsiderando os
 intervalos exatos entre eles.
 
-Uma composição pode ser entendida como uma matriz de características
-rítmicas, de classe de notas, de contornos e de timbre. As relações
-entre contorno e classe de notas podem ser abordadas de duas maneiras:
-considerando possíveis associações entre conjuntos e contornos, ou
-tratando conjuntos de notas e contornos de forma autônoma
-\cite{friedmann85:methodology}.
-
-Por definição contornos são ordenados, e representados por letras
-maiúsculas e seus elementos por numerais subscritos. Estes numerais
-representam a posição destes elementos em ordem temporal de
-aparecimento no contorno \cite{marvin.ea87:relating}. Por exemplo, em
-um contorno $P\:\langle5\:9\:6\:8\rangle$, $P_0$ é igual a 5, $P_1$ é
-igual a 9, $P_2$ é igual a 6, e $P_3$ é igual a 8.
-
 \eng{C-space} pode ser entendido como um grande conjunto de
 \eng{c-pitch} (alturas de contorno). Cada contorno contido em um
 \eng{c-space} é chamado de \eng{cseg} (segmento de
@@ -139,8 +122,14 @@ contorno)\footnote{Trata-se de uma idéia semelhante à da geometria, de
   reta e segmento de reta, onde o \eng{c-space} seria análogo à reta,
   e o \eng{cseg} ao segmento de reta.}. Subconjuntos de \eng{cseg} são
 chamados \eng{csubseg}, e podem conter elementos contíguos ou não do
-\eng{cseg} que os contém. \note{voce usa c-space antes, entao defina
-  antes}
+\eng{cseg} que os contém.
+
+Por definição contornos são ordenados, e representados por letras
+maiúsculas e seus elementos por numerais subscritos. Estes numerais
+representam a posição destes elementos em ordem temporal de
+aparecimento no contorno \cite{marvin.ea87:relating}. Por exemplo, em
+um contorno $P\:\langle5\:9\:6\:8\rangle$, $P_0$ é igual a 5, $P_1$ é
+igual a 9, $P_2$ é igual a 6, e $P_3$ é igual a 8.
 
 Relações de similaridade \cite{marvin.ea87:relating} são analisadas
 com a função de comparação \eng{com}, com a matriz de comparação
@@ -232,10 +221,8 @@ exemplo, $INT_1=\langle+\:-\:+\rangle$, ou seja, o movimento melódico
 é ascendente entre 5 e 9, descendente entre 9 e 6, e ascendente entre
 6 e 8. Esta comparação é feita também com uma operação conhecida como
 \termo{cas} \footnote{Em teorias de contornos não há consenso em
-  relação a terminologia. Isto se dá por terem sido desenvolvidas por
-  autores diferentes. \note{voce pode ter uma teoria desenvolvida por
-    autores diferentes e ter consenso, sugiro tirar frase} Por isso há
-  idéias semelhantes com nomes diferentes, como $INT_1$ e \termo{cas}
+  relação a terminologia. Por isso há idéias semelhantes com nomes
+  diferentes, como $INT_1$ e \termo{cas}
   \cite{friedmann87:response}.}.
 
 A classe de contorno (\termo{cc}) é uma operação importante para a
@@ -326,6 +313,14 @@ $\langle2,1,1/1,1,0\rangle$. Os dígitos da esquerda da barra
 representam os \termo{ci} ascendentes em ordem crescente, e os dígitos
 da direita os \termo{ci} descendentes em ordem crescente de valor
 absoluto.
+
+%% FIXME: parágrafo solto
+Uma composição pode ser entendida como uma matriz de características
+rítmicas, de classe de notas, de contornos e de timbre. As relações
+entre contorno e classe de notas podem ser abordadas de duas maneiras:
+considerando possíveis associações entre conjuntos e contornos, ou
+tratando conjuntos de notas e contornos de forma autônoma
+\cite{friedmann85:methodology}.
 
 \section{O software}
 \label{sec:o-software}
