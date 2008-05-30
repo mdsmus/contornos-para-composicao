@@ -19,9 +19,9 @@
   \midi {}
 }
 \paper {
-  paper-width = 8.1\cm
+  paper-width = 7.1\cm
   paper-height = 2.3\cm
-  line-width = 9\cm
+  line-width = 8\cm
   top-margin = -.5\cm
   left-margin = -1.2\cm
   tagline = 0
