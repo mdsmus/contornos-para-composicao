@@ -290,15 +290,14 @@ verificação de similaridade entre contornos. Assim como a forma
 normal, a \termo{CC} é obtida numerando-se ordenadamente todos os
 \termo{c-pitch} de $0$ a $(n-1)$, sendo $n$ o número de
 \termo{c-pitch} do \termo{cseg}. Uma \termo{CC} engloba todos os
-contornos considerados equivalentes.
-
-Dois ou mais contornos são considerados equivalentes se geram uma
-mesma \termo{COM-matrix}, ou seja, se mantêm a mesma estrutura de
-registro entre suas notas. Dessa forma, dado um \termo{cseg}
+contornos considerados equivalentes. Dois ou mais contornos são
+considerados equivalentes quando geram uma mesma \termo{COM-matrix},
+ou seja, quando mantêm a mesma estrutura de registro entre suas
+notas. Dessa forma, dado um \termo{cseg}
 $P\:\langle5\:9\:6\:8\rangle$, são considerados equivalentes os
 \termo{cseg} $\langle1\:5\:2\:3\rangle$, $\langle0\:10\:4\:7\rangle$,
-$\langle0\:3\:1\:2\rangle$, entre outros. Todos eles têm
-$\langle0\:3\:1\:2\rangle$ como forma normal.
+$\langle0\:3\:1\:2\rangle$ e muitos outros. Todos eles têm
+$\langle0\:3\:1\:2\rangle$ como forma normal e \termo{CC}.
 
 A operação de inversão de um contorno $P$ de ordem $q$ é representada
 por $IP$, e é matematicamente calculada como mostra a equação
