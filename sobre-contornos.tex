@@ -132,17 +132,17 @@ um contorno $P\:\langle5\:9\:6\:8\rangle$, $P_0$ é igual a 5, $P_1$ é
 igual a 9, $P_2$ é igual a 6, e $P_3$ é igual a 8.
 
 Relações de similaridade \cite{marvin.ea87:relating} são analisadas
-com a função de comparação \termo{com}, com a matriz de comparação
-(\termo{com-matrix}), com as formas normal e prima, com a classe de
-contorno (\termo{cc}), com a função de similaridade \termo{csim}, e
+com a função de comparação \termo{COM}, com a matriz de comparação
+(\termo{COM-matrix}), com as formas normal e prima, com a classe de
+contorno (\termo{CC}), com a função de similaridade \termo{csim}, e
 com a função de contorno embutido \termo{cemb}. As operações com
 contorno são identidade (P), inversão (I), retrogradação (R),
 retrogradação da inversão (RI) e translação.
 
 %% FIXME: tirar parênteses da referência à equação
-A função de comparação \termo{com} mede a diferença de registro entre
+A função de comparação \termo{COM} mede a diferença de registro entre
 dois elementos, ou seja, informa se um elemento é mais agudo, mais
-grave ou de mesma altura que outro. O valor de \termo{com} é o sinal
+grave ou de mesma altura que outro. O valor de \termo{COM} é o sinal
 ``$+$'' se $a$ é menor que $b$; ``$-$'' se $a$ é maior que $b$; e
 ``$0$'' se $a$ é igual a $b$. Por exemplo, no contorno
 $P\:\langle5\:9\:6\:8\rangle$, o valor de $COM(P_0,P_1)$ é o sinal
@@ -152,9 +152,9 @@ que a comparação entre dois elementos é igual ao inverso da comparação
 destes elementos em ordem reversa. Esta idéia pode ser melhor
 entendida observando-se a equação $COM(a,b)=-COM(b,a)$.
 
-A \termo{com-matrix} é uma matriz bidimensional que compara um
+A \termo{COM-matrix} é uma matriz bidimensional que compara um
 \termo{cseg} com ele próprio. Ela mostra os resultados da função de
-comparação \termo{com} para todos os \termo{c-pitch} de um
+comparação \termo{COM} para todos os \termo{c-pitch} de um
 \termo{cseg}. Cada posição da matriz é representada de modo genérico
 por $E_(P_x,P_y)$, onde $E$ representa a própria matriz, $P$
 representa o \termo{cseg} que dá origem à matriz, $P_x$ representa
@@ -162,7 +162,7 @@ genericamente um \termo{c-pitch} do \termo{cseg} $P$ localizado
 horizontalmente na matriz, e $P_y$ representa um \termo{c-pitch} de
 $P$ localizado verticalmente na matriz. A tabela \ref{tab:matriz-5968}
 contém a matriz de comparação de um \termo{cseg}
-$P\:\langle5\:9\:6\:8\rangle$, e outros exemplos de \termo{com-matrix}
+$P\:\langle5\:9\:6\:8\rangle$, e outros exemplos de \termo{COM-matrix}
 podem ser vistos na tabela \ref{tab:matriz-exemplos}.
 
 \begin{table}
@@ -215,20 +215,20 @@ adjacentes do \termo{cseg}. Em $P\:\langle5\:9\:6\:8\rangle$, por
 exemplo, $INT_1=\langle+\:-\:+\rangle$, ou seja, o movimento melódico
 é ascendente entre 5 e 9, descendente entre 9 e 6, e ascendente entre
 6 e 8. Esta comparação é feita também com uma operação conhecida como
-\termo{cas} \footnote{Em teorias de contornos não há consenso em
+\termo{CAS} \footnote{Em teorias de contornos não há consenso em
   relação a terminologia. Por isso há idéias semelhantes com nomes
-  diferentes, como $INT_1$ e \termo{cas}
+  diferentes, como $INT_1$ e \termo{CAS}
   \cite{friedmann87:response}.}.
 
-A classe de contorno (\termo{cc}) é uma operação importante para a
+A classe de contorno (\termo{CC}) é uma operação importante para a
 verificação de similaridade entre contornos. Assim como a forma
-normal, a \termo{cc} é obtida numerando-se ordenadamente todos os
+normal, a \termo{CC} é obtida numerando-se ordenadamente todos os
 \termo{c-pitch} de $0$ a $(n-1)$, sendo $n$ o número de
-\termo{c-pitch} do \termo{cseg}. Uma \termo{cc} engloba todos os
+\termo{c-pitch} do \termo{cseg}. Uma \termo{CC} engloba todos os
 contornos considerados equivalentes.
 
 Dois ou mais contornos são considerados equivalentes se geram uma
-mesma \termo{com-matrix}, ou seja, se mantêm a mesma estrutura de
+mesma \termo{COM-matrix}, ou seja, se mantêm a mesma estrutura de
 registro entre suas notas. Dessa forma, dado um \termo{cseg}
 $P\:\langle5\:9\:6\:8\rangle$, são considerados equivalentes os
 \termo{cseg} $\langle1\:5\:2\:3\rangle$, $\langle0\:10\:4\:7\rangle$,
@@ -271,9 +271,9 @@ o último, e $n$ o número total de \termo{c-pitch}, realiza-se:
 A função de similaridade de contornos \termo{csim} mede o grau de
 similaridade entre dois \termo{cseg} de mesma cardinalidade. Ela
 compara as posições do triângulo superior direito da
-\termo{com-matrix} de ambos os \termo{cseg}. O valor de \termo{csim} é
+\termo{COM-matrix} de ambos os \termo{cseg}. O valor de \termo{csim} é
 representado pelo quociente entre a soma de posições equivalentes e o
-número total de posições da \termo{com-matrix}. Os valores da
+número total de posições da \termo{COM-matrix}. Os valores da
 \termo{csim} variam entre 0 e 1, sendo 1 o grau máximo de
 similaridade. Considerando, por exemplo os \termo{cseg} da tabela
 \ref{tab:matriz-exemplos} como $P\:\langle5\:9\:6\:8\rangle$,
@@ -281,27 +281,27 @@ $Q\:\langle5\:7\:6\:8\rangle$ e $R\:\langle3\:0\:5\:1\rangle$, $P$ tem
 uma similaridade muito maior com Q, do que com R, já que
 $CSIM(P,Q)=0,83$, e $CSIM(P,R)=0,16$.
 
-Os Intervalos de Contorno (\termo{ci}) representam as relações entre
-\termo{c-pitch} de uma \termo{cc} e podem ser entendidos de duas
-formas. Para Friedmann \cite{friedmann85:methodology} os \termo{ci}
+Os Intervalos de Contorno (\termo{CI}) representam as relações entre
+\termo{c-pitch} de uma \termo{CC} e podem ser entendidos de duas
+formas. Para Friedmann \cite{friedmann85:methodology} os \termo{CI}
 guardam o valor entre os \termo{c-pitch}. Para Morris
-\cite{morris93:directions} os \termo{ci} guardam apenas a direção, mas
+\cite{morris93:directions} os \termo{CI} guardam apenas a direção, mas
 não o valor da diferença entre os \termo{c-pitch}. Por exemplo, para
-um mesmo \termo{cseg} $P\:\langle0\:3\:1\:2\rangle$, o \termo{ci}
+um mesmo \termo{cseg} $P\:\langle0\:3\:1\:2\rangle$, o \termo{CI}
 entre $P_1$ e $P_2$ para Friedmann é -2, e para Morris, ``$-$''.
 
-A Série de Intervalos de Contornos (\termo{cis}) considera, além da
-direção dos movimentos, o \termo{ci} entre todos os \termo{c-pitch}
+A Série de Intervalos de Contornos (\termo{CIS}) considera, além da
+direção dos movimentos, o \termo{CI} entre todos os \termo{c-pitch}
 adjacentes de um \termo{cseg}. Por exemplo, dado um \termo{cseg}
-$P\:\langle5\:9\:6\:8\rangle$, sua \termo{cis} será
+$P\:\langle5\:9\:6\:8\rangle$, sua \termo{CIS} será
 $\langle+4,-3,+2\rangle$.
 
-O Vetor de Intervalos de Contornos (\termo{cia}) descreve a freqüência
-de cada tipo de \termo{ci} em uma \termo{cc}. Por exemplo, o
-\termo{cseg} $P\:\langle0\:3\:1\:2\rangle$ tem \termo{cia}
+O Vetor de Intervalos de Contornos (\termo{CIA}) descreve a freqüência
+de cada tipo de \termo{CI} em uma \termo{CC}. Por exemplo, o
+\termo{cseg} $P\:\langle0\:3\:1\:2\rangle$ tem \termo{CIA}
 $\langle2,1,1/1,1,0\rangle$. Os dígitos da esquerda da barra
-representam os \termo{ci} ascendentes em ordem crescente, e os dígitos
-da direita os \termo{ci} descendentes em ordem crescente de valor
+representam os \termo{CI} ascendentes em ordem crescente, e os dígitos
+da direita os \termo{CI} descendentes em ordem crescente de valor
 absoluto.
 
 %% FIXME: parágrafo solto
