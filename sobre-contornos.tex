@@ -13,7 +13,7 @@
 }
 
 \begin{document}
-\graphicspath{{figs}}
+\graphicspath{{figs/}{out/}{data/}}
 
 \title{Software para processar contornos}
 \author{}{}{}{}
@@ -115,11 +115,38 @@ contorno contido em um \termo{c-space} é chamado de \termo{cseg}
   geometria, de reta e segmento de reta, onde o \termo{c-space} seria
   análogo à reta, e o \termo{cseg} ao segmento de reta.}. Subconjuntos
 de \termo{cseg} são chamados \termo{csubseg}, e podem conter elementos
-contíguos ou não do \termo{cseg} que os contém.
+contíguos ou não do \termo{cseg} que os contém. A figura
+\ref{fig:c-space} contém três exemplos de um mesmo \termo{c-space} de
+10 \termo{c-pitch} enumerados do mais grave (0) para o mais agudo
+(9). Na figura \ref{fig:c-space5968} o \termo{c-space} contém o
+\termo{cseg} P, com os \termo{c-pitch} 5, 9, 6 e 8. Na figura
+\ref{fig:c-space7420} o \termo{c-space} contém o \termo{cseg} M, com
+\termo{c-pitch} 7, 4, 2 e 0. Ainda nesta figura o \termo{cseg} M
+contém o \termo{csubseg} O, com \termo{c-pitch} 4 e 2. Por último, na
+figura \ref{fig:c-space564} o \termo{c-space} contém o \termo{cseg} N,
+com os \termo{c-pitch} não adjacentes 5, 6 e 4.
 
-Por definição contornos são ordenados, e representados por letras
-maiúsculas e seus elementos por numerais subscritos. Estes numerais
-representam a posição destes elementos em ordem temporal de
+\begin{figure}
+  \centering
+  \subfigure[Cseg P]{
+    \includegraphics{cspace-5968}
+    \label{fig:c-space5968}
+  }
+  \subfigure[Cseg M e csubseg O]{
+    \includegraphics{cspace-7420}
+    \label{fig:c-space7420}
+  }
+  \subfigure[Cseg N]{
+    \includegraphics{cspace-564}
+    \label{fig:c-space564}
+  }
+  \caption{C-space com cseg e csubseg}
+  \label{fig:c-space}
+\end{figure}
+
+Por definição contornos são ordenados no tempo, e representados por
+letras maiúsculas e seus elementos por numerais subscritos. Estes
+numerais representam a posição destes elementos em ordem temporal de
 aparecimento no contorno \cite{marvin.ea87:relating}. Por exemplo, em
 um contorno $P\:\langle5\:9\:6\:8\rangle$, $P_0$ é igual a 5, $P_1$ é
 igual a 9, $P_2$ é igual a 6, e $P_3$ é igual a 8.
@@ -277,12 +304,12 @@ $CSIM(P,Q)=0,83$, e $CSIM(P,R)=0,16$.
 
 Os Intervalos de Contorno (\termo{CI}) representam as relações entre
 \termo{c-pitch} de uma \termo{CC} e podem ser entendidos de duas
-formas. Para Friedmann \cite{friedmann85:methodology} os \termo{CI}
-guardam o valor entre os \termo{c-pitch}. Para Morris
-\cite{morris93:directions} os \termo{CI} guardam apenas a direção, mas
-não o valor da diferença entre os \termo{c-pitch}. Por exemplo, para
-um mesmo \termo{cseg} $P\:\langle0\:3\:1\:2\rangle$, o \termo{CI}
-entre $P_1$ e $P_2$ para Friedmann é -2, e para Morris, ``$-$''.
+formas: guardando o valor entre os \termo{c-pitch}
+\cite{friedmann85:methodology}, ou guardando apenas a direção, mas não
+o valor da diferença entre os \termo{c-pitch}
+\cite{morris93:directions}. Por exemplo, para um mesmo \termo{cseg}
+$P\:\langle0\:3\:1\:2\rangle$, o \termo{CI} entre $P_1$ e $P_2$ para
+Friedmann é -2, e para Morris, ``$-$''.
 
 A Série de Intervalos de Contornos (\termo{CIS}) considera, além da
 direção dos movimentos, o \termo{CI} entre todos os \termo{c-pitch}
