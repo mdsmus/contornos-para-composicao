@@ -116,16 +116,31 @@ contorno contido em um \termo{c-space} é chamado de \termo{cseg}
   análogo à reta, e o \termo{cseg} ao segmento de reta.}. Subconjuntos
 de \termo{cseg} são chamados \termo{csubseg}, e podem conter elementos
 contíguos ou não do \termo{cseg} que os contém. A figura
-\ref{fig:c-space} contém um \termo{c-space} com 10 \termo{c-pitch}
-enumerados do mais grave (0) para o mais agudo (9). O \termo{c-space}
-representado contém dois \termo{cseg}: P, com os \termo{c-pitch} 5, 9,
-6 e 8, e M, com 7, 4, 2 e 0. O \termo{cseg} M contém um
-\termo{csubseg} N com os \termo{c-pitch} 4 e 2.
+\ref{fig:c-space} contém três exemplos de um mesmo \termo{c-space} de
+10 \termo{c-pitch} enumerados do mais grave (0) para o mais agudo
+(9). Na figura \ref{fig:c-space5968} o \termo{c-space} contém o
+\termo{cseg} P, com os \termo{c-pitch} 5, 9, 6 e 8. Na figura
+\ref{fig:c-space7420} o \termo{c-space} contém o \termo{cseg} M, com
+\termo{c-pitch} 7, 4, 2 e 0. Ainda nesta figura o \termo{cseg} M
+contém o \termo{csubseg} O, com \termo{c-pitch} 4 e 2. Por último, na
+figura \ref{fig:c-space564} o \termo{c-space} contém o \termo{cseg} N,
+com os \termo{c-pitch} não adjacentes 5, 6 e 4.
 
 \begin{figure}
   \centering
-  \includegraphics{cspace}
-  \caption{C-space com csegs P e M, e csubseg N}
+  \subfigure[Cseg P]{
+    \includegraphics{cspace-5968}
+    \label{fig:c-space5968}
+  }
+  \subfigure[Cseg M e csubseg O]{
+    \includegraphics{cspace-7420}
+    \label{fig:c-space7420}
+  }
+  \subfigure[Cseg N]{
+    \includegraphics{cspace-564}
+    \label{fig:c-space564}
+  }
+  \caption{C-space com cseg e csubseg}
   \label{fig:c-space}
 \end{figure}
 
