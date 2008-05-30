@@ -1,15 +1,9 @@
 \documentclass[brazil]{article}
 \usepackage{anppom2008}
 
-% usar para termos estrangeiros
 \newcommand{\eng}[1]{\textit{#1}}
-
-% usar para nomes de obras
 \newcommand{\opus}[1]{\textit{#1}}
-
-% usar para nomes de termos
 \newcommand{\termo}[1]{\textit{#1}}
-
 \newcommand{\goiaba}{\opus{Goiaba}}
 
 \begin{document}
@@ -82,7 +76,7 @@ intervalos são pouco a pouco expandidos ou contraídos, como por
 exemplo ocorre no início da \opus{Música para Cordas, Percussão e
   Celesta}, de Béla Bartók. \note{nao esta clara a relacao dessa obra
   com contornos. marcos: ela não está relacionada com contornos, mas
-  com expansão de intervalos} 
+  com expansão de intervalos}
 
 No campo da percepção musical contorno melódico é uma importante
 característica para o reconhecimento de melodias familiares \cite[p.
@@ -111,18 +105,18 @@ operações para mapeamento e comparação de contornos
 
 A música pode ser entendida a partir de diferentes espaços, como de
 altura e de contorno \cite{morris87:composition}. O espaço de contorno
-(\eng{c-space}) é uma abstração de espaço musical que consiste em
+(\termo{c-space}) é uma abstração de espaço musical que consiste em
 elementos organizados do grave para o agudo desconsiderando os
 intervalos exatos entre eles.
 
-\eng{C-space} pode ser entendido como um grande conjunto de
-\eng{c-pitch} (alturas de contorno). Cada contorno contido em um
-\eng{c-space} é chamado de \eng{cseg} (segmento de
+\termo{C-space} pode ser entendido como um grande conjunto de
+\termo{c-pitch} (alturas de contorno). Cada contorno contido em um
+\termo{c-space} é chamado de \termo{cseg} (segmento de
 contorno)\footnote{Trata-se de uma idéia semelhante à da geometria, de
-  reta e segmento de reta, onde o \eng{c-space} seria análogo à reta,
-  e o \eng{cseg} ao segmento de reta.}. Subconjuntos de \eng{cseg} são
-chamados \eng{csubseg}, e podem conter elementos contíguos ou não do
-\eng{cseg} que os contém.
+  reta e segmento de reta, onde o \termo{c-space} seria análogo à
+  reta, e o \termo{cseg} ao segmento de reta.}. Subconjuntos de
+\termo{cseg} são chamados \termo{csubseg}, e podem conter elementos
+contíguos ou não do \termo{cseg} que os contém.
 
 Por definição contornos são ordenados, e representados por letras
 maiúsculas e seus elementos por numerais subscritos. Estes numerais
@@ -132,17 +126,17 @@ um contorno $P\:\langle5\:9\:6\:8\rangle$, $P_0$ é igual a 5, $P_1$ é
 igual a 9, $P_2$ é igual a 6, e $P_3$ é igual a 8.
 
 Relações de similaridade \cite{marvin.ea87:relating} são analisadas
-com a função de comparação \eng{com}, com a matriz de comparação
-(\eng{com-matrix}), com as formas normal e prima, com a classe de
-contorno (\eng{cc}), com a função de similaridade \eng{csim}, e com a
-função de contorno embutido \eng{cemb}. As operações com contorno são
-identidade (P), inversão (I), retrogradação (R), retrogradação da
-inversão (RI) e translação.
+com a função de comparação \termo{com}, com a matriz de comparação
+(\termo{com-matrix}), com as formas normal e prima, com a classe de
+contorno (\termo{cc}), com a função de similaridade \termo{csim}, e
+com a função de contorno embutido \termo{cemb}. As operações com
+contorno são identidade (P), inversão (I), retrogradação (R),
+retrogradação da inversão (RI) e translação.
 
 %% FIXME: tirar parênteses da referência à equação
-A função de comparação \eng{com} mede a diferença de registro entre
+A função de comparação \termo{com} mede a diferença de registro entre
 dois elementos, ou seja, informa se um elemento é mais agudo, mais
-grave ou de mesma altura que outro. O valor de \eng{com} é o sinal
+grave ou de mesma altura que outro. O valor de \termo{com} é o sinal
 ``$+$'' se $a$ é menor que $b$; ``$-$'' se $a$ é maior que $b$; e
 ``$0$'' se $a$ é igual a $b$. Por exemplo, no contorno
 $P\:\langle5\:9\:6\:8\rangle$, o valor de $COM(P_0,P_1)$ é o sinal
@@ -206,7 +200,7 @@ podem ser vistos na tabela \ref{tab:matriz-exemplos}.
     \label{tab:matriz-3051}
   }
   \label{tab:matriz-exemplos}
-  \caption{Exemplos de \eng{COM-matrix}}
+  \caption{Exemplos de \termo{COM-matrix}}
 \end{table}
 
 Esta matriz tem uma diagonal principal zero. Esta diagonal estabelece
