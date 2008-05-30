@@ -1,7 +1,7 @@
 set terminal postscript eps enhanced
 set ylabel "altura"
 set xlabel "tempo"
-set output "c-3051.eps"
+set output "data/c-3051.eps"
 set grid
 set nokey
 set size .3,.3
