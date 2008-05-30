@@ -1,10 +1,16 @@
 \documentclass[brazil]{article}
 \usepackage{anppom2008}
+\usepackage{color}
 
 \newcommand{\eng}[1]{\textit{#1}}
 \newcommand{\opus}[1]{\textit{#1}}
 \newcommand{\termo}[1]{\textit{#1}}
 \newcommand{\goiaba}{\opus{Goiaba}}
+\newcounter{notacounter}
+\newcommand{\note}[1]{
+  \addtocounter{notacounter}{1}
+  \textcolor{red}{[nota \arabic{notacounter}: #1]}
+}
 
 \begin{document}
 \graphicspath{{figs-out/}{out/}}
