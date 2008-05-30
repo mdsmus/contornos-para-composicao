@@ -150,12 +150,7 @@ $P\:\langle5\:9\:6\:8\rangle$, o valor de $COM(P_0,P_1)$ é o sinal
 o sinal ``$+$''. Esta medida de comparação pode ser invertida de modo
 que a comparação entre dois elementos é igual ao inverso da comparação
 destes elementos em ordem reversa. Esta idéia pode ser melhor
-entendida observando-se a equação (\ref{eq:inversao-da-comparacao}).
-
-\begin{equation}
-  \label{eq:inversao-da-comparacao}
-  COM(a,b)=-COM(b,a)
-\end{equation}
+entendida observando-se a equação $COM(a,b)=-COM(b,a)$.
 
 A \termo{com-matrix} é uma matriz bidimensional que compara um
 \termo{cseg} com ele próprio. Ela mostra os resultados da função de
@@ -242,7 +237,7 @@ $\langle0\:3\:1\:2\rangle$ como forma normal.
 
 A operação de inversão de um contorno $P$ de ordem $q$ é representada
 por $IP$, e é matematicamente calculada como mostra a equação
-(\ref{eq:operacao-de-inversao}).
+\ref{eq:operacao-de-inversao}.
 
 \begin{equation}
   \label{eq:operacao-de-inversao}
@@ -254,12 +249,7 @@ Portanto, dado um \termo{cseg} $P\:\langle5\:9\:6\:8\rangle$ (de ordem
 outros elementos chegamos ao contorno
 $IP\:\langle4\:0\:3\:1\rangle$. É possível ainda relacionar a inversão
 entre elementos através da matriz de comparação, como mostra a equação
-(\ref{eq:operacao-de-inversao-na-comparacao}).
-
-\begin{equation}
-  \label{eq:operacao-de-inversao-na-comparacao}
-  COM(P_a,P_b)=-COM(IP_a,IP_b)
-\end{equation}
+$COM(P_a,P_b)=-COM(IP_a,IP_b)$.
 
 A operação de translação de um \termo{csubseg} de $n$ \termo{c-pitch}
 distintos não numerados de $0$ a $(n-1)$ consiste na renumeração com
@@ -274,7 +264,7 @@ o último, e $n$ o número total de \termo{c-pitch}, realiza-se:
 \item translação, caso o \termo{cseg} não esteja em sua forma normal;
 %% FIXME: tirar o "; e"
 \item inversão, caso $a$ seja maior que $[(n-1) - b]$ (vide equação
-  (\ref{eq:operacao-de-inversao})); e
+  \ref{eq:operacao-de-inversao});
 \item retrogradação, caso $a$ seja maior que $b$.
 \end{enumerate}
 
