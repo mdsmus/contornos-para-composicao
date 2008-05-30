@@ -67,11 +67,6 @@ representam estruturas musicais manipuláveis através de várias
 operações como inversão e retrogradação, e podem ser abordados tanto
 do ponto de vista da análise quanto da composição.
 
-Na música pré-serial de Webern, por exemplo, na falta de outros
-sistemas dominantes de organização de alturas, contorno representa um
-fator estrutural igual em importância às relações da Teoria dos
-Conjuntos \cite[p. 157]{clifford95:contour}.
-
 A idéia de preservação de contorno e variação de intervalos entre
 notas é encontrada em diferentes situações musicais. Há adequação de
 notas à tonalidade em respostas tonais de fugas, em mudanças de modo
@@ -113,15 +108,13 @@ A música pode ser entendida a partir de diferentes espaços, como de
 altura e de contorno \cite{morris87:composition}. O espaço de contorno
 (\termo{c-space}) é uma abstração de espaço musical que consiste em
 elementos organizados do grave para o agudo desconsiderando os
-intervalos exatos entre eles.
-
-\termo{C-space} pode ser entendido como um grande conjunto de
-\termo{c-pitch} (alturas de contorno). Cada contorno contido em um
-\termo{c-space} é chamado de \termo{cseg} (segmento de
-contorno)\footnote{Trata-se de uma idéia semelhante à da geometria, de
-  reta e segmento de reta, onde o \termo{c-space} seria análogo à
-  reta, e o \termo{cseg} ao segmento de reta.}. Subconjuntos de
-\termo{cseg} são chamados \termo{csubseg}, e podem conter elementos
+intervalos exatos entre eles. O \termo{c-space} pode ser entendido
+como um grande conjunto de \termo{c-pitch} (alturas de contorno). Cada
+contorno contido em um \termo{c-space} é chamado de \termo{cseg}
+(segmento de contorno)\footnote{Trata-se de uma idéia semelhante à da
+  geometria, de reta e segmento de reta, onde o \termo{c-space} seria
+  análogo à reta, e o \termo{cseg} ao segmento de reta.}. Subconjuntos
+de \termo{cseg} são chamados \termo{csubseg}, e podem conter elementos
 contíguos ou não do \termo{cseg} que os contém.
 
 Por definição contornos são ordenados, e representados por letras
@@ -200,21 +193,20 @@ podem ser vistos na tabela \ref{tab:matriz-exemplos}.
     \end{tabular}
     \label{tab:matriz-3051}
   }
-  \label{tab:matriz-exemplos}
   \caption{Exemplos de \termo{COM-matrix}}
+  \label{tab:matriz-exemplos}
 \end{table}
 
 Esta matriz tem uma diagonal principal zero. Esta diagonal estabelece
 uma simetria entre elementos da matriz. As diagonais superiores são
 chamadas de $INT_n$, onde $n$ é o número da diagonal: 1 para a
 superior mais próxima da diagonal zero, 2 para a seguinte, 3 para a
-posterior e assim por diante.
-
-A diagonal $INT_1$ traz comparações de registros entre elementos
-adjacentes do \termo{cseg}. Em $P\:\langle5\:9\:6\:8\rangle$, por
-exemplo, $INT_1=\langle+\:-\:+\rangle$, ou seja, o movimento melódico
-é ascendente entre 5 e 9, descendente entre 9 e 6, e ascendente entre
-6 e 8. Esta comparação é feita também com uma operação conhecida como
+posterior e assim por diante. A diagonal $INT_1$ traz comparações de
+registros entre elementos adjacentes do \termo{cseg}. Em
+$P\:\langle5\:9\:6\:8\rangle$, por exemplo,
+$INT_1=\langle+\:-\:+\rangle$, ou seja, o movimento melódico é
+ascendente entre 5 e 9, descendente entre 9 e 6, e ascendente entre 6
+e 8. Esta comparação é feita também com uma operação conhecida como
 \termo{CAS} \footnote{Em teorias de contornos não há consenso em
   relação a terminologia. Por isso há idéias semelhantes com nomes
   diferentes, como $INT_1$ e \termo{CAS}
@@ -294,23 +286,13 @@ A Série de Intervalos de Contornos (\termo{CIS}) considera, além da
 direção dos movimentos, o \termo{CI} entre todos os \termo{c-pitch}
 adjacentes de um \termo{cseg}. Por exemplo, dado um \termo{cseg}
 $P\:\langle5\:9\:6\:8\rangle$, sua \termo{CIS} será
-$\langle+4,-3,+2\rangle$.
-
-O Vetor de Intervalos de Contornos (\termo{CIA}) descreve a freqüência
-de cada tipo de \termo{CI} em uma \termo{CC}. Por exemplo, o
-\termo{cseg} $P\:\langle0\:3\:1\:2\rangle$ tem \termo{CIA}
-$\langle2,1,1/1,1,0\rangle$. Os dígitos da esquerda da barra
-representam os \termo{CI} ascendentes em ordem crescente, e os dígitos
-da direita os \termo{CI} descendentes em ordem crescente de valor
-absoluto.
-
-%% FIXME: parágrafo solto
-Uma composição pode ser entendida como uma matriz de características
-rítmicas, de classe de notas, de contornos e de timbre. As relações
-entre contorno e classe de notas podem ser abordadas de duas maneiras:
-considerando possíveis associações entre conjuntos e contornos, ou
-tratando conjuntos de notas e contornos de forma autônoma
-\cite{friedmann85:methodology}.
+$\langle+4,-3,+2\rangle$. O Vetor de Intervalos de Contornos
+(\termo{CIA}) descreve a freqüência de cada tipo de \termo{CI} em uma
+\termo{CC}. Por exemplo, o \termo{cseg} $P\:\langle0\:3\:1\:2\rangle$
+tem \termo{CIA} $\langle2,1,1/1,1,0\rangle$. Os dígitos da esquerda da
+barra representam os \termo{CI} ascendentes em ordem crescente, e os
+dígitos da direita os \termo{CI} descendentes em ordem crescente de
+valor absoluto. \cite{friedmann85:methodology}.
 
 \section{O software}
 \label{sec:o-software}
@@ -320,6 +302,19 @@ tratando conjuntos de notas e contornos de forma autônoma
 
 \section{Composição com contornos}
 \label{sec:comp-com-cont}
+
+\note{parágrafo solto}
+Na música pré-serial de Webern, por exemplo, na falta de outros
+sistemas dominantes de organização de alturas, contorno representa um
+fator estrutural igual em importância às relações da Teoria dos
+Conjuntos \cite[p. 157]{clifford95:contour}.
+
+\note{parágrafo solto}
+Uma composição pode ser entendida como uma matriz de características
+rítmicas, de classe de notas, de contornos e de timbre. As relações
+entre contorno e classe de notas podem ser abordadas de duas maneiras:
+considerando possíveis associações entre conjuntos e contornos, ou
+tratando conjuntos de notas e contornos de forma autônoma
 
 \renewcommand{\refname}{Referências Bibliográficas}
 \bibliography{music-harmony-and-theory,music-history,melodic-contour,music-analysis,music-scores,music-perception,composition,programs}
