@@ -300,20 +300,13 @@ $\langle0\:3\:1\:2\rangle$ e muitos outros. Todos eles têm
 $\langle0\:3\:1\:2\rangle$ como forma normal e \termo{CC}.
 
 A operação de inversão de um contorno $P$ de ordem $q$ é representada
-por $IP$, e é matematicamente calculada como mostra a equação
-\ref{eq:operacao-de-inversao}.
-
-\begin{equation}
-  \label{eq:operacao-de-inversao}
-  IP_n=(q-1-P_n)
-\end{equation}
-
-Portanto, dado um \termo{cseg} $P\:\langle5\:9\:6\:8\rangle$ (de ordem
-10), $IP_0=(10-1-P_0)$. Logo, $IP_0=4$. Aplicando-se a mesma idéia aos
-outros elementos chegamos ao contorno
-$IP\:\langle4\:0\:3\:1\rangle$. É possível ainda relacionar a inversão
-entre elementos através da matriz de comparação, como mostra a equação
-$COM(P_a,P_b)=-COM(IP_a,IP_b)$.
+por $IP$, e é matematicamente calculada por
+$IP_n=(q-1-P_n)$. Portanto, dado um \termo{cseg}
+$P\:\langle5\:9\:6\:8\rangle$ (de ordem 10), $IP_0=(10-1-P_0)$. Logo,
+$IP_0=4$. Aplicando-se a mesma idéia aos outros elementos chegamos ao
+contorno $IP\:\langle4\:0\:3\:1\rangle$. É possível ainda relacionar a
+inversão entre elementos através da matriz de comparação. Calcula-se
+esta inversão com a operação $COM(P_a,P_b)=-COM(IP_a,IP_b)$.
 
 A operação de translação de um \termo{csubseg} de $n$ \termo{c-pitch}
 distintos não numerados de $0$ a $(n-1)$ consiste na renumeração com
@@ -326,9 +319,8 @@ A forma prima de um \termo{cseg} é calculada fazendo-se três operações
 o último, e $n$ o número total de \termo{c-pitch}, realiza-se:
 \begin{enumerate}
 \item translação, caso o \termo{cseg} não esteja em sua forma normal;
-%% FIXME: tirar o "; e"
-\item inversão, caso $a$ seja maior que $[(n-1) - b]$ (vide equação
-  \ref{eq:operacao-de-inversao});
+\item inversão, caso $a$ seja maior que $[(n-1) - b]$ (vide operação
+  de inversão);
 \item retrogradação, caso $a$ seja maior que $b$.
 \end{enumerate}
 
