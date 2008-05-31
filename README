@@ -1,0 +1,49 @@
+Instruções para compilar o artigo
+----------------------------------
+
+1. Dependências
+
+Para compilar o ps ou pdf deste arquivo é necessário ter os softwares:
+
+- texlive
+- latexmk
+- lilypond
+- gnuplot
+- inkscape
+- ps2pdf
+- dia
+- htlatex
+
+É preciso também a biblioteca lib [1] e o repositório bib [2], ambos
+do Genos [3]. Eles deverão estar em um local referenciado no ~/.bashrc
+por:
+
+export BSTINPUTS="caminho-para-lib/lib/latex/bib/:"
+export BIBINPUTS="caminho-para-bib/bib/:"
+export TEXINPUTS="caminho-para-lib/lib/latex/:"
+
+2. Compilando
+
+Para compilar um .dvi basta fazer
+
+make
+
+Para compilar um .ps:
+
+make ps
+
+Para compilar um .pdf:
+
+make pdf
+
+Para limpar os arquivos gerados:
+
+make clean
+
+---
+Notas:
+
+[1] git clone ssh://cons@genos.mus.br/repos/lib.git
+[2] git clone ssh://cons@genos.mus.br/repos/bib.git
+[3] Para maiores informações sobre os repositórios do Genos acesse
+http://git.genos.mus.br/
