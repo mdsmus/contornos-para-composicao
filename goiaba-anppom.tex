@@ -1,0 +1,42 @@
+\documentclass[brazil]{article}
+\usepackage{anppom2008}
+
+\newcommand{\eng}[1]{\textit{#1}}
+\newcommand{\opus}[1]{\textit{#1}}
+\newcommand{\termo}[1]{\textit{#1}}
+\newcommand{\goiaba}{\opus{Goiaba}}
+
+\newcommand{\citacaolonga}[4]{
+  \begin{quote}
+    \normalsize
+%    \selectlanguage{english}
+    {#1}\footnote{
+      \selectlanguage{brazil}
+      ``{#2}''.
+    }.
+    \selectlanguage{brazil}
+    \cite[#3]{#4}.
+  \end{quote}
+}
+
+\begin{document}
+\graphicspath{{figs/}{out/}{data/}{lily/}}
+
+\title{Software para processar contornos}
+\author{}{}{}{}
+%\author{Marcos da Silva Sampaio e Pedro Kröger}{Universidade Federal
+%  da Bahia}{{mdsmus,pedro.kroeger}@gmail.com}{genos.mus.br}
+
+\begin{sumario}
+  Resumo do texto com até 100 palavras.  
+\end{sumario}
+
+\keywords{Contornos, Computação musical, Composição, Lisp}
+
+\input{body-pt}
+
+\renewcommand{\refname}{Referências Bibliográficas}
+\bibliography{music-harmony-and-theory,music-history,melodic-contour,music-analysis,music-scores,music-perception,composition,programs}
+\bibliographystyle{kchicago}
+
+\end{document}

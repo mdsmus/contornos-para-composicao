@@ -1,4 +1,4 @@
-NAME = goiaba-anppom
+NAME = goiaba-simples
 TEXSRCS = body-pt.tex
 
 OTHER += $(LILY_EPS4)

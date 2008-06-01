@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{color}
+\RequirePackage{url}
+\RequirePackage[utf8,utf8x]{inputenc}
+\RequirePackage[brazil]{babel}
+\usepackage[FIGBOTCAP,TABBOTCAP]{subfigure}
+\usepackage{graphicx,url}
+
+\newcounter{notecounter}
+
+\newcommand{\note}[1]{
+  \addtocounter{notecounter}{1}
+  \textcolor{red}{[note \arabic{notecounter}: #1]}
+}
+
+% \def\abovestrut#1{\rule[0in]{0in}{#1}\ignorespaces}
+% \def\belowstrut#1{\rule[-#1]{0in}{#1}\ignorespaces}
+
+% \def\abovespace{\abovestrut{0.20in}}
+% \def\aroundspace{\abovestrut{0.20in}\belowstrut{0.10in}}
+% \def\belowspace{\belowstrut{0.10in}}
+
+\newcommand{\eng}[1]{\textit{#1}}
+\newcommand{\opus}[1]{\textit{#1}}
+\newcommand{\termo}[1]{\textit{#1}}
+\newcommand{\goiaba}{\opus{Goiaba}}
+
+\newcommand{\citacaolonga}[4]{
+  \begin{quote}
+    \normalsize
+%    \selectlanguage{english}
+    {#1}\footnote{
+      \selectlanguage{brazil}
+      ``{#2}''.
+    }.
+    \selectlanguage{brazil}
+    \cite[#3]{#4}.
+  \end{quote}
+}
+
+\title{Software para processar contornos}
+\author{}
+
+\begin{document}
+\graphicspath{{figs/}{out/}{data/}{lily/}}
+
+\maketitle
+\input{body-pt}
+
+\bibliographystyle{plain}
+\bibliography{music-harmony-and-theory,music-history,melodic-contour,music-analysis,music-scores,music-perception,composition,programs}
+
+\end{document}

@@ -1,39 +1,3 @@
-\documentclass[brazil]{article}
-\usepackage{anppom2008}
-\usepackage{color}
-
-\newcommand{\eng}[1]{\textit{#1}}
-\newcommand{\opus}[1]{\textit{#1}}
-\newcommand{\termo}[1]{\textit{#1}}
-\newcommand{\goiaba}{\opus{Goiaba}}
-
-\newcommand{\citacaolonga}[4]{
-  \begin{quote}
-    \normalsize
-%    \selectlanguage{english}
-    {#1}\footnote{
-      \selectlanguage{brazil}
-      ``{#2}''.
-    }.
-    \selectlanguage{brazil}
-    \cite[#3]{#4}.
-  \end{quote}
-}
-
-\begin{document}
-\graphicspath{{figs/}{out/}{data/}{lily/}}
-
-\title{Software para processar contornos}
-\author{}{}{}{}
-%\author{Marcos da Silva Sampaio e Pedro Kröger}{Universidade Federal
-%  da Bahia}{{mdsmus,pedro.kroeger}@gmail.com}{genos.mus.br}
-
-\begin{sumario}
-  Resumo do texto com até 100 palavras.  
-\end{sumario}
-
-\keywords{Contornos, Computação musical, Composição, Lisp}
-
 %% divisão de trabalho
 
 %% por que contornos são importantes
@@ -457,14 +421,7 @@ uma sobreposição de elementos e ainda uma operação de inversão.
   \label{fig:melodia-concatenacao-operacoes}
 \end{figure}
 
-
 O uso de contornos melódicos pode ser feito sobre qualquer sistema de
 organização de alturas, como o sistema modal, tonal, sobre séries e
 conjuntos de notas, ou pode ainda estar associado a indeterminação de
 altura.
-
-\renewcommand{\refname}{Referências Bibliográficas}
-\bibliography{music-harmony-and-theory,music-history,melodic-contour,music-analysis,music-scores,music-perception,composition,programs}
-\bibliographystyle{kchicago}
-
-\end{document}
