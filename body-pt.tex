@@ -161,18 +161,18 @@ $P\:\langle5\:9\:6\:8\rangle$, $P_0$ é igual a 5, $P_1$ é igual a 9,
 $P_2$ é igual a 6, e $P_3$ é igual a 8.
 
 Relações de similaridade \cite{marvin.ea87:relating} são analisadas
-com a função de comparação \termo{COM}, com a matriz de comparação
+com a operação de comparação \termo{COM}, com a matriz de comparação
 (\termo{COM-matrix}), com as formas normal e prima, com a classe de
 contorno (\termo{CC}), com a função de similaridade \termo{CSIM}, e
-com a função de contorno embutido \termo{CEMB}. As operações com
+com a função de contorno embutido \termo{CEMB}. Outras operações com
 contorno são identidade (P), inversão (I), retrogradação (R),
 retrogradação da inversão (RI) e translação.
 
-A função de comparação \termo{COM} mede a diferença de registro entre
-dois elementos, ou seja, informa se um elemento é mais agudo, mais
-grave ou de mesma altura que outro. O valor de \termo{COM} é o sinal
-``$+$'' se $a$ é menor que $b$; ``$-$'' se $a$ é maior que $b$; e
-``$0$'' se $a$ é igual a $b$. Por exemplo, no contorno
+A operação de comparação \termo{COM} mede a diferença de registro
+entre dois elementos, ou seja, informa se um elemento é mais agudo,
+mais grave ou de mesma altura que outro. O valor de \termo{COM} é o
+sinal ``$+$'' se $a$ é menor que $b$; ``$-$'' se $a$ é maior que $b$;
+e ``$0$'' se $a$ é igual a $b$. Por exemplo, no contorno
 $P\:\langle5\:9\:6\:8\rangle$, o valor de $COM(P_0,P_1)$ é o sinal
 ``$+$'', o de $COM(P_1,P_2)$ é ``$-$'', e o valor de $COM(P_3,P_0)$ é
 o sinal ``$+$''. Esta medida de comparação pode ser invertida de modo
@@ -181,8 +181,8 @@ destes elementos em ordem reversa. Esta idéia pode ser melhor
 entendida observando-se a equação $COM(a,b)=-COM(b,a)$.
 
 A \termo{COM-matrix} é uma matriz bidimensional que compara um
-\termo{cseg} com ele próprio. Ela mostra os resultados da função de
-comparação \termo{COM} para todos os \termo{c-pitch} de um
+\termo{cseg} com ele próprio. Esta matriz mostra os resultados da
+função de comparação \termo{COM} para todos os \termo{c-pitch} de um
 \termo{cseg}. Cada posição da matriz é representada de modo genérico
 por $E_(P_x,P_y)$, onde $E$ representa a própria matriz, $P$
 representa o \termo{cseg} que dá origem à matriz, $P_x$ representa
@@ -235,13 +235,13 @@ vistos na figura \ref{fig:graficos-cseg} podem ser vistos na tabela
   \label{tab:matriz-exemplos}
 \end{table}
 
-Esta matriz tem uma diagonal principal zero. Esta diagonal estabelece
-uma simetria entre elementos da matriz. As diagonais superiores são
-chamadas de $INT_n$, onde $n$ é o número da diagonal: 1 para a
-superior mais próxima da diagonal zero, 2 para a seguinte, 3 para a
-posterior e assim por diante. A diagonal $INT_1$ traz comparações de
-registros entre elementos adjacentes do \termo{cseg}. Em
-$P\:\langle5\:9\:6\:8\rangle$, por exemplo,
+A diagonal principal da \termo{COM-matrix}, com campos preenchidos com
+zero, estabelece uma simetria entre os elementos da matriz. As
+diagonais superiores são chamadas de $INT_n$, onde $n$ é o número da
+diagonal: 1 para a superior mais próxima da diagonal zero, 2 para a
+seguinte, 3 para a posterior e assim por diante. A diagonal $INT_1$
+traz comparações de registros entre elementos adjacentes do
+\termo{cseg}. Em $P\:\langle5\:9\:6\:8\rangle$, por exemplo,
 $INT_1=\langle+\:-\:+\rangle$, ou seja, o movimento melódico é
 ascendente entre 5 e 9, descendente entre 9 e 6, e ascendente entre 6
 e 8. Esta comparação é feita também com uma operação conhecida como
@@ -259,7 +259,7 @@ contornos considerados equivalentes. Dois ou mais contornos são
 considerados equivalentes quando geram uma mesma \termo{COM-matrix},
 ou seja, quando mantêm a mesma estrutura de registro entre suas
 notas. Dessa forma, dado um \termo{cseg}
-$P\:\langle5\:9\:6\:8\rangle$, são considerados equivalentes os
+$P\:\langle5\:9\:6\:8\rangle$, são considerados seus equivalentes os
 \termo{cseg} $\langle1\:5\:2\:3\rangle$, $\langle0\:10\:4\:7\rangle$,
 $\langle0\:3\:1\:2\rangle$ e muitos outros. Todos eles têm
 $\langle0\:3\:1\:2\rangle$ como forma normal e \termo{CC}.
@@ -276,8 +276,8 @@ esta inversão com a operação $COM(P_a,P_b)=-COM(IP_a,IP_b)$.
 A operação de translação de um \termo{csubseg} de $n$ \termo{c-pitch}
 distintos não numerados de $0$ a $(n-1)$ consiste na renumeração com
 $0$ para o \termo{c-pitch} mais grave e $(n-1)$ para o mais
-agudo. Operações de retrogradação e inversão são idênticas às de
-alturas de notas.
+agudo. Operações de retrogradação e inversão são idênticas às
+realizadas com alturas de notas.
 
 A forma prima de um \termo{cseg} é calculada fazendo-se três operações
 \cite{marvin.ea87:relating}. Sendo $a$ o primeiro \termo{c-pitch}, $b$
