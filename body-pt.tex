@@ -50,7 +50,7 @@ a criação de material composicional a partir de operações com
 contornos melódicos. Um software para processar contornos melódicos e
 retornar operações pode contribuir significativamente com a citada
 pesquisa. Com este artigo pretendemos descrever as funcionalidades e o
-estado do desenvolvimento do Goiaba, o software que estamos
+estado do desenvolvimento do \goiaba, o software que estamos
 desenvolvendo para processar contornos melódicos.
 
 \section{Teorias de contornos}
@@ -277,8 +277,9 @@ esta inversão com a operação $COM(P_a,P_b)=-COM(IP_a,IP_b)$.
 A operação de translação de um \termo{csubseg} de $n$ \termo{c-pitch}
 distintos não numerados de $0$ a $(n-1)$ consiste na renumeração com
 $0$ para o \termo{c-pitch} mais grave e $(n-1)$ para o mais
-agudo. Operações de retrogradação e inversão são idênticas às
-realizadas com alturas de notas.
+agudo. Operações de retrogradação e rotação são idênticas às
+realizadas com alturas de notas. A expansão de intervalos consiste na
+multiplicação de cada \termo{c-pitch} por um dado fator.
 
 A forma prima de um \termo{cseg} é calculada fazendo-se três operações
 \cite{marvin.ea87:relating}. Sendo $a$ o primeiro \termo{c-pitch}, $b$
@@ -331,7 +332,9 @@ algoritmos \cite{adams76:melodic,morris93:directions}. O algoritmo de
 Adams, criado para definir uma tipologia de contornos, reduz uma
 melodia inteira a apenas quatro \termo{c-pitch}\footnote{Adams utiliza
   o termo \eng{minimal boundary}.}: a primeira altura, a última, a
-mais aguda e a mais grave.
+mais aguda e a mais grave. O algoritmo de Morris, processado em várias
+etapas, reduz a melodia através da observação de mudanças de direção
+entre segmentos adjacentes e eliminação de \termo{c-pitch}.
 
 \section{O software}
 \label{sec:o-software}
