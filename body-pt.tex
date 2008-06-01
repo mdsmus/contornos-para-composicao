@@ -336,10 +336,10 @@ mais aguda e a mais grave. O algoritmo de Morris, processado em várias
 etapas, reduz a melodia através da observação de mudanças de direção
 entre segmentos adjacentes e eliminação de \termo{c-pitch}.
 
-\section{O software}
+\section{O \goiaba{}}
 \label{sec:o-software}
 
-Goiaba é desenvolvido em Common Lisp com o compilador SBCL
+O \goiaba{} é desenvolvido em Common Lisp com o compilador SBCL
 \cite{team07:sbcl}. Os tipos básicos usados no programa são definidos
 em classes. A classe \texttt{ponto} define pontos cartesianos como (x,
 y), a classe \texttt{contorno-duracao} é uma lista de pontos como ((x,
@@ -367,14 +367,14 @@ de maneira diferente dependendo qual o tipo do seu primeiro parâmetro:
   (map-contorno-simples #L(+ !1 fator) (pontos objeto)))
 \end{verbatim}
 
-Goiaba tem diversas funções para lidar com contornos como tranposição,
-inversão, retrogradação, e rotação. Além disso operações definidas na
-literatura estão implementadas como redução e inclinação de contornos
-\cite{adams76:melodic}, cc, cas, casv, cia, ccvi e ccvii
+\goiaba{} tem diversas funções para lidar com contornos como
+tranposição, inversão, retrogradação, e rotação. Além disso operações
+definidas na literatura estão implementadas como redução e inclinação
+de contornos \cite{adams76:melodic}, cc, cas, casv, cia, ccvi e ccvii
 \cite{friedmann85:methodology} e matriz de comparação de contornos
 \cite{morris93:directions}. \note{colocar cc, cas, etc por extenso?}
 
-Finalmente, Goiaba usa a biblioteca
+Finalmente, \goiaba{} usa a biblioteca
 Cl-pdf\footnote{www.cliki.net/CL-PDF} para plotar facilmente contornos
 definidos (por exemplo, os gráficos na figura \ref{fig:graficos-cseg}
 foram gerados por essa biblioteca). Dessa maneira operações em
