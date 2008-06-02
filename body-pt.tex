@@ -301,7 +301,6 @@ do despacho múltiplo usado pelo sistema de objetos de Common Lisp
 (CLOS). Desse modo um método como \texttt{transpor} vai se comportar
 de maneira diferente dependendo qual o tipo do seu primeiro parâmetro:
 
-\footnotesize
 \begin{verbatim}
 (defmethod transpor ((objeto contorno-duracao) fator)
   (map-contorno-duracao #L(transpor !1 fator) (pontos objeto)))
@@ -311,7 +310,6 @@ de maneira diferente dependendo qual o tipo do seu primeiro parâmetro:
 (defmethod transpor ((objeto contorno-simples) fator)
   (map-contorno-simples #L(+ !1 fator) (pontos objeto)))
 \end{verbatim}
-\normalsize
 
 O \goiaba{} processa contornos representados de forma simples, como
 uma lista de \termo{c-pitch}: \verb!#c(5 9 6)!, e contorno com
