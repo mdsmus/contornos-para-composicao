@@ -52,8 +52,9 @@ cartesiano na figura \ref{fig:cseg-5968}. Outros exemplos de melodias
 de contornos semelhantes podem ser vistos nas figuras
 \ref{fig:melodias-cseg} e \ref{fig:graficos-cseg}. A terminologia
 utilizada nessas figuras é explicada mais adiante, no entanto uma
-descrição de todas as operações foge ao escopo deste artigo. Assim,
-descreveremos apenas as operações implementadas no \goiaba.
+descrição de todas as operações de contorno foge ao escopo deste
+artigo. Assim, descreveremos apenas as operações implementadas no
+\goiaba.
 
 \begin{figure}
   \centering
@@ -100,7 +101,7 @@ intervalos exatos entre eles. Leva-se em conta apenas a relação entre
 os registros dos elementos. O \termo{c-space} pode ser entendido como
 um grande conjunto de \termo{c-pitch} (alturas de contorno).  
 
-Cada contorno de \termo{c-pitch} contido em um \termo{c-space} é
+Cada conjunto de \termo{c-pitch} contido em um \termo{c-space} é
 chamado de \termo{cseg} (segmento de contorno)\footnote{Trata-se de
   uma idéia semelhante à da geometria, de reta e segmento de reta,
   onde o \termo{c-space} seria análogo à reta, e o \termo{cseg} ao
@@ -205,7 +206,7 @@ comparação de um \termo{cseg} $P\:\langle5\:9\:6\:8\rangle$. As
       $6$ & $-$ & $+$ & $0$ & $+$ \\
       $8$ & $-$ & $-$ & $-$ & $0$
     \end{tabular}
-    \label{tab:matriz-5968}
+    \label{tab:matriz-5768}
   }
   \qquad
   \subtable[cseg $R\langle3\:0\:5\:1\rangle$]{
@@ -238,14 +239,13 @@ série de contornos adjacentes (\termo{CAS}) \footnote{Em teorias de
   \cite{friedmann87:response}.}.
 
 A classe de contorno (\termo{CC}) é uma operação importante para a
-verificação de similaridade entre contornos. Assim como a forma
-normal, obtém-se \termo{CC} numerando-se ordenadamente todos os
-\termo{c-pitch} de $0$ a $(n-1)$, sendo $n$ o número total de
-\termo{c-pitch} do \termo{cseg}. Uma \termo{CC} engloba todos os
-contornos considerados equivalentes. Dois ou mais contornos são
-considerados equivalentes quando geram uma mesma \termo{COM-matrix},
-ou seja, quando mantêm a mesma estrutura de registro entre suas
-notas. Dessa forma, dado um \termo{cseg}
+verificação de similaridade entre contornos. Obtém-se \termo{CC}
+numerando-se ordenadamente todos os \termo{c-pitch} de $0$ a $(n-1)$,
+sendo $n$ o número total de \termo{c-pitch} do \termo{cseg}. Uma
+\termo{CC} engloba todos os contornos considerados equivalentes. Dois
+ou mais contornos são considerados equivalentes quando geram uma mesma
+\termo{COM-matrix}, ou seja, quando mantêm a mesma estrutura de
+registro entre suas notas. Dessa forma, dado um \termo{cseg}
 $P\:\langle5\:9\:6\:8\rangle$, são considerados seus equivalentes os
 \termo{cseg} $\langle1\:5\:2\:3\rangle$, $\langle0\:10\:4\:7\rangle$,
 $\langle0\:3\:1\:2\rangle$ e muitos outros. Todos eles têm
