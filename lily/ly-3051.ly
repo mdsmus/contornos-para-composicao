@@ -5,9 +5,9 @@
     \time 4/4
     \relative c'' {
       \override TextScript #'extra-offset = #'( 0 . 2 )
-      d d, e' a
+      d d, e' a,
       \bar "||"
-      e c f d
+      e' c f d
       \bar "||"
     }
   }
