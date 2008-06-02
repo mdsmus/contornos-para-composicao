@@ -31,10 +31,10 @@ citando apenas alguns exemplos \cite[p. 29]{morris87:composition}.
 
 No campo da percepção musical contorno melódico é uma importante
 característica para o reconhecimento de melodias familiares \cite[p.
-136]{dowling.ea86:music}. É reconhecido que ouvintes têm maior
-acuidade na percepção de semelhança de contornos do que na semelhança
-de alturas. Por isso novas teorias para comparação de contornos se
-tornaram necessárias à área da Análise Musical
+136]{dowling.ea86:music}. Além disso é reconhecido que ouvintes têm
+maior acuidade na percepção de semelhança de contornos do que na
+semelhança de alturas. Por isso novas teorias para comparação de
+contornos se tornaram necessárias à área da Análise Musical
 \cite[p. 226]{marvin.ea87:relating}.
 
 Há estudos de contornos também em outras áreas da música. Na área de
@@ -69,8 +69,8 @@ utilizada nessas figuras é explicada mais adiante As teorias de
 contorno contam com diversas operações definidas e contam com várias
 revisões na literatura \cite{clifford95:contour,beard03:contour}. No
 entanto uma descrição de todas as operações foge ao escopo deste
-artigo. Assim, descreveremos apenas as operações já implementadas no
-\goiaba.
+artigo. Assim, descreveremos apenas as operações implementadas ou em
+fase de implementação no \goiaba.
 
 \begin{figure}
   \centering
@@ -152,7 +152,7 @@ adjacentes 5, 6 e 4.
   \label{fig:c-space}
 \end{figure}
 
-Por definição contornos são ordenados no tempo, são representados por
+Por definição contornos são ordenados no tempo, representados por
 letras maiúsculas e têm seus elementos representados por numerais
 subscritos. Estes numerais indicam a posição destes elementos em ordem
 temporal \cite{marvin.ea87:relating}. Por exemplo, um contorno $P$ de
@@ -169,7 +169,7 @@ com a função de contorno embutido \termo{CEMB}. Outras operações com
 contorno são identidade (P), inversão (I), retrogradação (R),
 retrogradação da inversão (RI) e translação.
 
-A operação de comparação \termo{COM} mede a diferença de registro
+A operação de comparação \termo{COM} retorna a diferença de registro
 entre dois elementos, ou seja, informa se um elemento é mais agudo,
 mais grave ou de mesma altura que outro. O valor de \termo{COM} é o
 sinal ``$+$'' se $a$ é menor que $b$; ``$-$'' se $a$ é maior que $b$;
@@ -246,15 +246,15 @@ traz comparações de registros entre elementos adjacentes do
 $INT_1=\langle+\:-\:+\rangle$, ou seja, o movimento melódico é
 ascendente entre 5 e 9, descendente entre 9 e 6, e ascendente entre 6
 e 8. Esta comparação é feita também com uma operação conhecida como
-\termo{CAS} \footnote{Em teorias de contornos não há consenso em
-  relação a terminologia. Por isso há idéias semelhantes com nomes
-  diferentes, como $INT_1$ e \termo{CAS}
+série de contornos adjacentes (\termo{CAS}) \footnote{Em teorias de
+  contornos não há consenso em relação a terminologia. Por isso há
+  idéias semelhantes com nomes diferentes, como $INT_1$ e \termo{CAS}
   \cite{friedmann87:response}.}.
 
 A classe de contorno (\termo{CC}) é uma operação importante para a
 verificação de similaridade entre contornos. Assim como a forma
-normal, a \termo{CC} é obtida numerando-se ordenadamente todos os
-\termo{c-pitch} de $0$ a $(n-1)$, sendo $n$ o número de
+normal, obtém-se \termo{CC} numerando-se ordenadamente todos os
+\termo{c-pitch} de $0$ a $(n-1)$, sendo $n$ o número total de
 \termo{c-pitch} do \termo{cseg}. Uma \termo{CC} engloba todos os
 contornos considerados equivalentes. Dois ou mais contornos são
 considerados equivalentes quando geram uma mesma \termo{COM-matrix},
@@ -334,10 +334,11 @@ A redução de contornos é possível a partir de dois diferentes
 algoritmos \cite{adams76:melodic,morris93:directions}. O algoritmo de
 Adams, criado para definir uma tipologia de contornos, reduz uma
 melodia inteira a apenas quatro \termo{c-pitch}\footnote{Adams utiliza
-  o termo \eng{minimal boundary}.}: a primeira altura, a última, a
-mais aguda e a mais grave. O algoritmo de Morris, processado em várias
-etapas, reduz a melodia através da observação de mudanças de direção
-entre segmentos adjacentes e eliminação de \termo{c-pitch}.
+  uma terminologia diferenciada da que apresentamos aqui.}: a primeira
+altura, a última, a mais aguda e a mais grave. O algoritmo de Morris,
+processado em várias etapas, reduz a melodia através da observação de
+mudanças de direção entre segmentos adjacentes e eliminação de
+\termo{c-pitch}.
 
 \section{O Goiaba}
 \label{sec:o-software}
@@ -354,6 +355,14 @@ simplesmente \verb!#p(0 3)! com a macro de leitura. Da mesma maneira,
 um \texttt{contorno-duracao} com dois pontos pode ser instanciado com
 \verb!#d(#p(0 3) #p(1 4))! ao invés de usar \texttt{make-instance}.
 
+Contornos são representados simbolicamente de duas maneiras: como
+contornos simples, considerando apenas os \termo{c-pitch}
+\verb!(5 9 6)!, e como contornos com duração, considerando também o
+local no tempo onde ocorre cada \termo{c-pitch}:
+\verb!((0 5)(1 9)(2 6)!. Apesar de termos uma codificação específica
+que comporte a influência do tempo no contorno, ainda não estamos trabalhando com
+esse elemento.
+
 As operações em contornos são implementadas em métodos, aproveitando
 do despacho múltiplo usado pelo sistema de objetos de Common Lisp
 (CLOS). Desse modo um método como \texttt{transpor} vai se comportar
@@ -369,21 +378,22 @@ de maneira diferente dependendo qual o tipo do seu primeiro parâmetro:
   (map-contorno-simples #L(+ !1 fator) (pontos objeto)))
 \end{verbatim}
 
-\goiaba{} tem diversas funções para lidar com contornos como
-tranposição, inversão, retrogradação, e rotação. Além disso operações
-definidas na literatura estão implementadas como redução e inclinação
-de contornos \cite{adams76:melodic}, \termo{CC}, \termo{CAS},
-\termo{CASV}, \termo{CIA}, \termo{CCVI} e \termo{CCVII}
-\cite{friedmann85:methodology} e \termo{COM-matrix}
-\cite{morris93:directions}.
+\goiaba{} tem diversas operações para lidar com contornos, como
+tranposição, inversão, retrogradação, rotação e expansão de
+intervalos. Além disso operações definidas na literatura também estão
+implementadas, como redução de contornos \cite{adams76:melodic},
+\termo{CC}, \termo{CAS}, \termo{CASV}, \termo{CI}, \termo{CIA},
+\termo{CCVI} e \termo{CCVII} \cite{friedmann85:methodology} e
+\termo{COM-matrix} \cite{morris93:directions}.
 
 Finalmente, \goiaba{} usa a biblioteca
 Cl-pdf\footnote{www.cliki.net/CL-PDF} para plotar facilmente contornos
 definidos, permitindo a fácil visualização de operações em contornos.
-Por exemplo, o código abaixo gera um gráfico com o contorno original,
-sua transposição, retrogradação, inversão, rotação, ampliação de
-altura e inserção de ponto (figura \ref{fig:operacoes}).
+Por exemplo, o código seguinte gera um gráfico com o contorno
+original, sua transposição, retrogradação, inversão, rotação,
+ampliação de altura e inserção de ponto (figura \ref{fig:operacoes}).
 
+\break
 \begin{verbatim}
 (let ((c1 #d(#p(0 0) #p(1 5) #p(2 3) #p(3 4) #p(4 1) #p(5 3))))
   (plot-page "contornos.pdf"
@@ -407,20 +417,16 @@ Para o futuro pretendemos implementar a possibilidade de gerar
 contornos a partir de partituras musicais e vice-versa e implementar
 uma interface gráfica. O desenvolvimento do \goiaba{} segue
 procedimentos oriundos do desenvolvimento de software livre como uso
-de controle de versão e disponibilização pública do
-código-fonte\footnote{Referência ao código-fonte não inserida por
-  motivo do anonimato. Será incluído para a publicação.}.
-
-\subsection{O papel da programação em computador no aprendizado das
-  teorias de contornos}
-\label{sec:progr-para-compr}
+de controle de versão e disponibilização do código-fonte na
+internet\footnote{Referência ao código-fonte não inserida por motivo
+  do anonimato. Será incluído para a publicação.}.
 
 As descrições das teorias de contornos nem sempre são feitas pelos
 seus autores de uma forma totalmente clara. A programação de uma
 teoria em um software de computador é um exercício poderoso no
 processo de aprendizagem, pois o programador é obrigado a expressar de
 forma precisa a compreensão que tem de uma idéia obscura. Dessa forma
-a implementação das operações de contorno em um programa de computador
+a implementação das operações de contorno em um software de computador
 ajuda na compreensão da teoria, uma vez que é preciso entender
 totalmente como cada operação se processa e que funcionalidade tem.
 
@@ -485,10 +491,11 @@ $Z\langle9\:7\:11\:3\:5\:13\rangle$.
 \end{figure}
 
 A figura \ref{fig:melodia-concatenacao-operacoes} contém um exemplo
-musical de combinação de operações. Uma melodia com uma série de
-contornos adjacentes \termo{CAS} $\langle+\:+\:-\:+\rangle$ tem seus
-intervalos gradativamente expandidos. Os últimos dois fragmentos têm
-uma sobreposição de elementos e ainda uma operação de inversão.
+musical composto a partir da combinação de operações. Uma melodia com
+uma série de contornos adjacentes \termo{CAS}
+$\langle+\:+\:-\:+\rangle$ tem seus intervalos gradativamente
+expandidos. Os últimos dois fragmentos têm uma sobreposição de
+elementos e ainda uma operação de inversão.
 
 \begin{figure}
   \centering
@@ -500,7 +507,7 @@ uma sobreposição de elementos e ainda uma operação de inversão.
 Outro aspecto interessante do uso de contornos melódicos em composição
 é o fato de poder ser utilizado sobre qualquer sistema de organização
 de alturas, como o sistema modal, tonal, sobre séries e conjuntos de
-notas, ou pode ainda estar associado a indeterminação de altura.
+notas, ou poder ainda estar associado a indeterminação de altura.
 
 \section{Conclusão}
 \label{sec:conclusao}
@@ -512,15 +519,15 @@ o momento verificamos a utilidade das operações de inversão,
 transposição, retrogradação, rotação, expansão de intervalos,
 \termo{INT}, redução e preenchimento.
 
-O \goiaba{} tem se mostrado útil para entender contornos e como
-ferramenta auxiliar à composição musical. Estamos dando prosseguimento
-à pesquisa com a revisão das teorias de contornos, a implementação das
-operações, a refatoração do \goiaba{}, e a composição de pequenas
-peças musicais como experimentos. Esperamos definir um subconjunto de
-operações para criar uma interface gráfica e via linha de comando do
-\goiaba{}. Assim podermos lançar a sua primeira versão e compor uma
-obra de maior proporção baseada em combinações de operações de
-contornos.
+O \goiaba{} tem se mostrado útil tanto para entender contornos quanto
+como ferramenta auxiliar à composição musical. Estamos dando
+prosseguimento à pesquisa com a revisão das teorias de contornos, a
+implementação das operações, a refatoração do \goiaba{}, e a
+composição de pequenas peças musicais como experimentos. Esperamos
+definir um subconjunto de operações para criar uma interface gráfica e
+via linha de comando do \goiaba{}. Assim poderemos lançar a sua
+primeira versão e compor uma obra de maior proporção baseada em
+combinações de operações de contornos.
 
 %%% Local Variables: 
 %%% mode: latex
