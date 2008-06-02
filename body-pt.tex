@@ -325,7 +325,10 @@ barra representam os \termo{CI} ascendentes em ordem crescente, e os
 dígitos da direita os \termo{CI} descendentes em ordem crescente de
 valor absoluto. \cite{friedmann85:methodology}.
 
-%% falar da redução de adams e de expansão de intervalos.
+Os Vetores de classe de contorno (\termo{CCVI} e \termo{CCVII}), de
+dois dígitos cada um, refletem os movimentos ascendentes e ascendentes
+de um contorno e são calculados a partir dos \termo{CI} ascendentes e
+descendentes.
 
 A redução de contornos é possível a partir de dois diferentes
 algoritmos \cite{adams76:melodic,morris93:directions}. O algoritmo de
@@ -340,16 +343,17 @@ entre segmentos adjacentes e eliminação de \termo{c-pitch}.
 \label{sec:o-software}
 
 O \goiaba{} é desenvolvido em Common Lisp com o compilador SBCL
-\cite{team07:sbcl}. Os tipos básicos usados no programa são definidos
-em classes. A classe \texttt{ponto} define pontos cartesianos como (x,
-y), a classe \texttt{contorno-duracao} é uma lista de pontos como ((x,
-y) (z, w)), e a classe \texttt{contorno-simples} define apenas as
-alturas dos contornos como (y w). Algumas macros de leitura foram
-definidas para simplificar o processo de criar instâncias de objetos.
-Por exemplo, para criar uma instância do tipo \texttt{ponto} pode-se
-fazer normalmente \texttt{(make-instance 'ponto :x 0 :y 3)} ou
-simplesmente \verb!#p(0 3)! com a macro de leitura. Da mesma maneira,
-um \texttt{contorno-duracao} com dois pontos pode ser instanciado com
+\cite{team07:sbcl}. \note{O que são tipos?} Os tipos básicos usados no
+programa são definidos em classes. A classe \texttt{ponto} define
+pontos cartesianos como (x, y), a classe \texttt{contorno-duracao} é
+uma lista de pontos como ((x, y) (z, w)), e a classe
+\texttt{contorno-simples} define apenas as alturas dos contornos como
+(y w). Algumas macros de leitura foram definidas para simplificar o
+processo de criar instâncias de objetos.  Por exemplo, para criar uma
+instância do tipo \texttt{ponto} pode-se fazer normalmente
+\texttt{(make-instance 'ponto :x 0 :y 3)} ou simplesmente
+\verb!#p(0 3)! com a macro de leitura. Da mesma maneira, um
+\texttt{contorno-duracao} com dois pontos pode ser instanciado com
 \verb!#d(#p(0 3) #p(1 4))! ao invés de usar \texttt{make-instance}.
 
 As operações em contornos são implementadas em métodos, aproveitando
@@ -370,9 +374,10 @@ de maneira diferente dependendo qual o tipo do seu primeiro parâmetro:
 \goiaba{} tem diversas funções para lidar com contornos como
 tranposição, inversão, retrogradação, e rotação. Além disso operações
 definidas na literatura estão implementadas como redução e inclinação
-de contornos \cite{adams76:melodic}, cc, cas, casv, cia, ccvi e ccvii
-\cite{friedmann85:methodology} e matriz de comparação de contornos
-\cite{morris93:directions}. \note{colocar cc, cas, etc por extenso?}
+de contornos \cite{adams76:melodic}, \termo{CC}, \termo{CAS},
+\termo{CASV}, \termo{CIA}, \termo{CCVI} e \termo{CCVII}
+\cite{friedmann85:methodology} e \termo{COM-matrix}
+\cite{morris93:directions}.
 
 Finalmente, \goiaba{} usa a biblioteca
 Cl-pdf\footnote{www.cliki.net/CL-PDF} para plotar facilmente contornos
