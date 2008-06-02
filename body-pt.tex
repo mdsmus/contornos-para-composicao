@@ -39,7 +39,7 @@ contornos se tornaram necessárias à área da Análise Musical
 
 Há estudos de contornos também em outras áreas da música. Na área de
 Etnomusicologia contornos são usados para representar e classificar
-melodias populares \cite{adams76:melodic,kolinski65:structure}. Na
+melodias populares \cite{adams76:melodic}. Na
 área de Computação musical, especificamente, \eng{Music Information
   Retrieval}, contornos são utilizados em sistemas \eng{query by
   humming}, de busca em bases de dados a partir de melodias cantadas
@@ -75,15 +75,15 @@ fase de implementação no \goiaba.
 \begin{figure}
   \centering
   \subfigure[melodias com cseg $P\langle5\:9\:6\:8\rangle$]{
-    \includegraphics{ly-5968}
+    \includegraphics[scale=.9]{ly-5968}
     \label{fig:ly-cseg-5968}
   }
   \subfigure[melodias com cseg $Q\langle5\:7\:6\:8\rangle$]{
-    \includegraphics{ly-5768}
+    \includegraphics[scale=.9]{ly-5768}
     \label{fig:ly-cseg-5768}
   }
   \subfigure[melodias com cseg $R\langle3\:0\:5\:1\rangle$]{
-    \includegraphics{ly-3051}
+    \includegraphics[scale=.9]{ly-3051}
     \label{fig:ly-cseg-3051}
   }
   \caption{Melodias para diferentes cseg}
@@ -137,15 +137,15 @@ adjacentes 5, 6 e 4.
 \begin{figure}
   \centering
   \subfigure[Cseg P]{
-    \includegraphics{cspace-5968}
+    \includegraphics[scale=.9]{cspace-5968}
     \label{fig:c-space5968}
   }
   \subfigure[Cseg M e csubseg O]{
-    \includegraphics{cspace-7420}
+    \includegraphics[scale=.9]{cspace-7420}
     \label{fig:c-space7420}
   }
   \subfigure[Cseg N]{
-    \includegraphics{cspace-564}
+    \includegraphics[scale=.9]{cspace-564}
     \label{fig:c-space564}
   }
   \caption{C-space com cseg e csubseg}
@@ -393,23 +393,22 @@ Por exemplo, o código seguinte gera um gráfico com o contorno
 original, sua transposição, retrogradação, inversão, rotação,
 ampliação de altura e inserção de ponto (figura \ref{fig:operacoes}).
 
-\break
 \begin{verbatim}
 (let ((c1 #d(#p(0 0) #p(1 5) #p(2 3) #p(3 4) #p(4 1) #p(5 3))))
   (plot-page "contornos.pdf"
     (plot-contorno-full 50 500
-                        c1 "original" :red
-                        (transpor c1 2) "transposição" :green
-                        (retrogradar c1) "retrógrado" :blue
-                        (inverter c1) "inversão" :pink
-                        (aumentar-altura c1 2) "aumentar-altura" :lightblue
-                        (rotacionar c1 1) "rotação" :darkcyan
-                        (insere-ponto c1 '(1 3) 2) "insere ponto" :purple)))
+       c1 "original" :red
+       (transpor c1 2) "transposição" :green
+       (retrogradar c1) "retrógrado" :blue
+       (inverter c1) "inversão" :pink
+       (aumentar-altura c1 2) "aumentar-altura" :lightblue
+       (rotacionar c1 1) "rotação" :darkcyan
+       (insere-ponto c1 '(1 3) 2) "insere ponto" :purple)))
 \end{verbatim}
 
 \begin{figure}
   \centering
-  \includegraphics[scale=.5]{contornos}
+  \includegraphics[scale=.4]{contornos}
   \caption{Operações em contorno}
   \label{fig:operacoes}
 \end{figure}
@@ -481,10 +480,10 @@ $Z\langle9\:7\:11\:3\:5\:13\rangle$.
 \begin{figure}
   \centering
   \subfigure[Contorno original $Y\langle1\:3\:2\:0\:4\:5\rangle$]{
-    \includegraphics{c-132045}
+    \includegraphics[scale=.9]{c-132045}
   }
   \subfigure[Contorno $Z\langle9\:7\:11\:3\:5\:13\rangle$]{
-    \includegraphics{c-971-11-35-13}
+    \includegraphics[scale=.9]{c-971-11-35-13}
   }
   \caption{Combinação de operações}
   \label{fig:combinacao-operacoes}
