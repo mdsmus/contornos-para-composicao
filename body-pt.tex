@@ -300,14 +300,6 @@ simplesmente \verb!#p(0 3)! com a macro de leitura. Da mesma maneira,
 um \texttt{contorno-duracao} com dois pontos pode ser instanciado com
 \verb!#d(#p(0 3) #p(1 4))! ao invés de usar \texttt{make-instance}.
 
-Contornos são representados simbolicamente de duas maneiras: como
-contornos simples, considerando apenas os \termo{c-pitch}
-\verb!(5 9 6)!, e como contornos com duração, considerando também o
-local no tempo onde ocorre cada \termo{c-pitch}:
-\verb!((0 5)(1 9)(2 6)!. Apesar de termos uma codificação específica
-que comporte a influência do tempo no contorno, ainda não estamos trabalhando com
-esse elemento.
-
 As operações em contornos são implementadas em métodos, aproveitando
 do despacho múltiplo usado pelo sistema de objetos de Common Lisp
 (CLOS). Desse modo um método como \texttt{transpor} vai se comportar
@@ -322,6 +314,11 @@ de maneira diferente dependendo qual o tipo do seu primeiro parâmetro:
 (defmethod transpor ((objeto contorno-simples) fator)
   (map-contorno-simples #L(+ !1 fator) (pontos objeto)))
 \end{verbatim}
+
+O \goiaba{} processa contornos representados de forma simples, como
+uma lista de \termo{c-pitch}: \verb!#c(5 9 6)!, e contorno com
+duração: \verb!#d(#p(0 5)(1 9)(2 6))!. O segundo formato servirá na
+futura implementação do tempo no contorno.
 
 \goiaba{} tem diversas operações para lidar com contornos, como
 tranposição, inversão, retrogradação, rotação e expansão de
