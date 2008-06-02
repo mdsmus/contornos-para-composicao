@@ -144,15 +144,28 @@ P_0\:P_1\:P_2\:P_3\rangle$. Dessa forma, dado um contorno
 $P\:\langle5\:9\:6\:8\rangle$, $P_0$ é igual a 5, $P_1$ é igual a 9,
 $P_2$ é igual a 6, e $P_3$ é igual a 8.
 
+Operações como retrogradação e rotação são semelhantes às realizadas
+com alturas de notas. A expansão de intervalos consiste na
+multiplicação de cada \termo{c-pitch} por um dado fator.
+
+A operação de inversão de um contorno $P$ de ordem $q$ é representada
+por $IP$, e é matematicamente calculada por
+$IP_n=(q-1-P_n)$. Portanto, dado um \termo{cseg}
+$P\:\langle5\:9\:6\:8\rangle$ (de ordem 10), $IP_0=(10-1-P_0)$. Logo,
+$IP_0=4$. Aplicando-se a mesma idéia aos outros elementos chegamos ao
+contorno $IP\:\langle4\:0\:3\:1\rangle$. É possível ainda relacionar a
+inversão entre elementos através da matriz de comparação. Calcula-se
+esta inversão com a operação $COM(P_a,P_b)=-COM(IP_a,IP_b)$.
+
 Relações de similaridade \cite{marvin.ea87:relating} são analisadas
 com operações como comparação (\termo{COM}), matriz de comparação
 (\termo{COM-matrix}) e classe de contorno (\termo{CC}).
 
-A operação de comparação \termo{COM} retorna a diferença de registro
-entre dois elementos, ou seja, informa se um elemento é mais agudo,
-mais grave ou de mesma altura que outro. O valor de \termo{COM} é o
-sinal ``$+$'' se $a$ é menor que $b$; ``$-$'' se $a$ é maior que $b$;
-e ``$0$'' se $a$ é igual a $b$. Por exemplo, no contorno
+A operação de comparação \termo{COM(a,b)} retorna a diferença de
+registro entre dois elementos, ou seja, informa se um elemento é mais
+agudo, mais grave ou de mesma altura que outro. O valor de \termo{COM}
+é o sinal ``$+$'' se $b$ é maior que $a$; ``$-$'' se $b$ é maior que
+$a$; e ``$0$'' se $b$ é igual a $a$. Por exemplo, no contorno
 $P\:\langle5\:9\:6\:8\rangle$, o valor de $COM(P_0,P_1)$ é o sinal
 ``$+$'', o de $COM(P_1,P_2)$ é ``$-$'', e o valor de $COM(P_3,P_0)$ é
 o sinal ``$+$''. Esta medida de comparação pode ser invertida de modo
@@ -238,19 +251,6 @@ $P\:\langle5\:9\:6\:8\rangle$, são considerados seus equivalentes os
 $\langle0\:3\:1\:2\rangle$ e muitos outros. Todos eles têm
 $\langle0\:3\:1\:2\rangle$ como forma normal e \termo{CC}.
 
-A operação de inversão de um contorno $P$ de ordem $q$ é representada
-por $IP$, e é matematicamente calculada por
-$IP_n=(q-1-P_n)$. Portanto, dado um \termo{cseg}
-$P\:\langle5\:9\:6\:8\rangle$ (de ordem 10), $IP_0=(10-1-P_0)$. Logo,
-$IP_0=4$. Aplicando-se a mesma idéia aos outros elementos chegamos ao
-contorno $IP\:\langle4\:0\:3\:1\rangle$. É possível ainda relacionar a
-inversão entre elementos através da matriz de comparação. Calcula-se
-esta inversão com a operação $COM(P_a,P_b)=-COM(IP_a,IP_b)$.
-
-Operações de retrogradação e rotação são idênticas às realizadas com
-alturas de notas. A expansão de intervalos consiste na multiplicação
-de cada \termo{c-pitch} por um dado fator.
-
 Os Intervalos de Contorno (\termo{CI}) representam as relações entre
 \termo{c-pitch} de uma \termo{CC} e podem ser entendidos de duas
 formas: guardando o valor entre os \termo{c-pitch}
@@ -301,7 +301,6 @@ do despacho múltiplo usado pelo sistema de objetos de Common Lisp
 (CLOS). Desse modo um método como \texttt{transpor} vai se comportar
 de maneira diferente dependendo qual o tipo do seu primeiro parâmetro:
 
-\footnotesize
 \begin{verbatim}
 (defmethod transpor ((objeto contorno-duracao) fator)
   (map-contorno-duracao #L(transpor !1 fator) (pontos objeto)))
@@ -311,14 +310,13 @@ de maneira diferente dependendo qual o tipo do seu primeiro parâmetro:
 (defmethod transpor ((objeto contorno-simples) fator)
   (map-contorno-simples #L(+ !1 fator) (pontos objeto)))
 \end{verbatim}
-\normalsize
 
 O \goiaba{} processa contornos representados de forma simples, como
 uma lista de \termo{c-pitch}: \verb!#c(5 9 6)!, e contorno com
-duração: \verb!#d(#p(0 5)(1 9)(2 6))!. O segundo formato servirá na
-futura implementação do tempo no contorno.
+duração: \verb!#d(#p(0 5)(1 9)(2 6))!. O segundo formato servirá para
+a futura implementação do tempo no contorno.
 
-\goiaba{} tem diversas operações para lidar com contornos, como
+O \goiaba{} tem diversas operações para lidar com contornos, como
 tranposição, inversão, retrogradação, rotação e expansão de
 intervalos. Além disso operações definidas na literatura também estão
 implementadas, como redução de contornos \cite{adams76:melodic},
