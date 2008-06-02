@@ -376,19 +376,37 @@ de contornos \cite{adams76:melodic}, cc, cas, casv, cia, ccvi e ccvii
 
 Finalmente, \goiaba{} usa a biblioteca
 Cl-pdf\footnote{www.cliki.net/CL-PDF} para plotar facilmente contornos
-definidos (por exemplo, os gráficos na figura \ref{fig:graficos-cseg}
-foram gerados por essa biblioteca). Dessa maneira operações em
-contornos podem ser facilmente visualizadas.
+definidos, permitindo a fácil visualização de operações em contornos.
+Por exemplo, o código abaixo gera um gráfico com o contorno original,
+sua transposição, retrogradação, inversão, rotação, ampliação de
+altura e inserção de ponto (figura \ref{fig:operacoes}).
 
+\begin{verbatim}
+(let ((c1 #d(#p(0 0) #p(1 5) #p(2 3) #p(3 4) #p(4 1) #p(5 3))))
+  (plot-page "contornos.pdf"
+    (plot-contorno-full 50 500
+                        c1 "original" :red
+                        (transpor c1 2) "transposição" :green
+                        (retrogradar c1) "retrógrado" :blue
+                        (inverter c1) "inversão" :pink
+                        (aumentar-altura c1 2) "aumentar-altura" :lightblue
+                        (rotacionar c1 1) "rotação" :darkcyan
+                        (insere-ponto c1 '(1 3) 2) "insere ponto" :purple)))
+\end{verbatim}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=.5]{contornos}
+  \caption{Operações em contorno}
+  \label{fig:operacoes}
+\end{figure}
 Para o futuro pretendemos implementar a possibilidade de gerar
 contornos a partir de partituras musicais e vice-versa e implementar
-uma interface gráfica.
-
-O desenvolvimento do \goiaba{} segue procedimentos oriundos do
-desenvolvimento de software livre como uso de controle de versão e
-disponibilização pública do código-fonte\footnote{Referência ao
-  código-fonte não inserida por motivo do anonimato. Será incluído
-  para a publicação.}.
+uma interface gráfica. O desenvolvimento do \goiaba{} segue
+procedimentos oriundos do desenvolvimento de software livre como uso
+de controle de versão e disponibilização pública do
+código-fonte\footnote{Referência ao código-fonte não inserida por
+  motivo do anonimato. Será incluído para a publicação.}.
 
 \subsection{O papel da programação em computador no aprendizado das
   teorias de contornos}
