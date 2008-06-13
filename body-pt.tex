@@ -10,18 +10,18 @@ relacionados com movimento de altura em função do tempo.
 
 Há diversas definições de contorno melódico na literatura
 \cite{piston59:harmony,toch77:shaping,schonberg:fundamentals,adams76:melodic,marvin.ea87:relating,morris87:composition,clifford95:contour,beard03:contour},
-cada uma delas relacionada com o objetivo do trabalhos de seus
-autores. No presente estudo preferimos entender que contorno melódico
-é um conjunto ordenado de alturas de notas (chamadas de pontos) cujo
-valor absoluto é ignorado e somente o registro, que pode ser mantido
-ou variar ascendente e descendentemente entre um ponto e outro, é
-considerado.
+cada uma delas relacionada com o objetivo do trabalhos de seu
+autore. No presente estudo preferimos entender \note{melhor dizer
+  ``entendemos'', não?} que contorno melódico é um conjunto ordenado
+de alturas de notas (chamadas de pontos) cujo valor absoluto é
+ignorado e somente o registro, que pode ser mantido ou variar
+ascendente e descendentemente entre um ponto e outro, é considerado.
 
 O estudo de contornos é importante porque, assim como conjuntos de
-notas e motivos, ajudam a dar coerência musical a uma obra. Eles
-representam estruturas musicais manipuláveis através de várias
-operações como inversão e retrogradação, e podem ser abordados tanto
-do ponto de vista da análise quanto da composição.
+notas e motivos, contornos ajudam a dar coerência musical a uma
+obra. Eles representam estruturas musicais manipuláveis através de
+várias operações como inversão e retrogradação, e podem ser abordados
+tanto do ponto de vista da análise quanto da composição.
 
 No campo da percepção musical contorno melódico é uma importante
 característica para o reconhecimento de melodias familiares \cite[p.
@@ -44,17 +44,18 @@ desenvolvendo para processar contornos melódicos.
 
 Teorias que visam sistematizar o estudo de contornos dispõem de várias
 operações para mapeamento e comparação de contornos
-\cite{friedmann85:methodology,friedmann87:response,morris87:composition,morris93:directions,marvin.ea87:relating,clifford95:contour,polansky.ea92:possible,quinn97:fuzzy,beard03:contour}. A
-partir das idéias destas teorias é possível, por exemplo, reconhecer
-semelhanças entre as duas melodias de quatro notas da figura
-\ref{fig:ly-cseg-5968}, cujo contorno está representado em gráfico
-cartesiano na figura \ref{fig:cseg-5968}. Outros exemplos de melodias
-de contornos semelhantes podem ser vistos nas figuras
-\ref{fig:melodias-cseg} e \ref{fig:graficos-cseg}. A terminologia
-utilizada nessas figuras é explicada mais adiante, no entanto uma
-descrição de todas as operações de contorno foge ao escopo deste
-artigo. Assim, descreveremos apenas as operações implementadas no
-\goiaba.
+\cite{friedmann85:methodology,friedmann87:response,morris87:composition,morris93:directions,marvin.ea87:relating,clifford95:contour,polansky.ea92:possible,quinn97:fuzzy,beard03:contour}
+\note{período fragmentado}. A partir das idéias destas teorias é
+possível, por exemplo, reconhecer semelhanças entre as duas melodias
+de quatro notas da figura \ref{fig:ly-cseg-5968}, cujo contorno está
+representado em gráfico cartesiano na figura
+\ref{fig:cseg-5968}. Outros exemplos de melodias de contornos
+semelhantes podem ser vistos nas figuras \ref{fig:melodias-cseg} e
+\ref{fig:graficos-cseg}. A terminologia utilizada nessas figuras é
+explicada mais adiante,\note{essa vírgula não é uma vírgula, deveriam
+  ser frases separadas} no entanto uma descrição de todas as operações
+de contorno foge ao escopo deste artigo. Assim, descreveremos apenas
+as operações implementadas no \goiaba.
 
 \begin{figure}
   \centering
@@ -94,13 +95,15 @@ artigo. Assim, descreveremos apenas as operações implementadas no
   \label{fig:graficos-cseg}
 \end{figure}
 
-A música pode ser entendida a partir de diferentes espaços, como de
-altura e de contorno \cite{morris87:composition}. O espaço de contorno
-(\termo{c-space}) é uma abstração de espaço musical que consiste em
-elementos organizados do grave para o agudo desconsiderando os
-intervalos exatos entre eles. Leva-se em conta apenas a relação entre
-os registros dos elementos. O \termo{c-space} pode ser entendido como
-um grande conjunto de \termo{c-pitch} (alturas de contorno).  
+A música pode ser entendida a partir de \note{``entendida a partir de
+  espaços'' fica estranho, que tal ``visualizada em''?} diferentes
+espaços, como de altura e de contorno \cite{morris87:composition}. O
+espaço de contorno (\termo{c-space}) é uma abstração de espaço musical
+que consiste em elementos organizados do grave para o agudo
+desconsiderando os intervalos exatos entre eles. Leva-se em conta
+apenas a relação entre os registros dos elementos. O \termo{c-space}
+pode ser entendido como um grande conjunto de \termo{c-pitch} (alturas
+de contorno).
 
 Cada conjunto de \termo{c-pitch} contido em um \termo{c-space} é
 chamado de \termo{cseg} (segmento de contorno)\footnote{Trata-se de
@@ -147,8 +150,9 @@ $P\:\langle5\:9\:6\:8\rangle$, $P_0$ é igual a 5, $P_1$ é igual a 9,
 $P_2$ é igual a 6, e $P_3$ é igual a 8.
 
 Operações como retrogradação e rotação são semelhantes às realizadas
-com alturas de notas. A expansão de intervalos consiste na
-multiplicação de cada \termo{c-pitch} por um dado fator.
+com alturas de notas. A expansão de intervalos \note{acho legal deixar
+  mais claro o que é a expansão de intervalos, talvez com um exemplo}
+consiste na multiplicação de cada \termo{c-pitch} por um dado fator.
 
 A operação de inversão de um contorno $P$ de ordem $q$ é representada
 por $IP$, e é matematicamente calculada por
@@ -161,7 +165,9 @@ esta inversão com a operação $COM(P_a,P_b)=-COM(IP_a,IP_b)$.
 
 Relações de similaridade \cite{marvin.ea87:relating} são analisadas
 com operações como comparação (\termo{COM}), matriz de comparação
-(\termo{COM-matrix}) e classe de contorno (\termo{CC}).
+(\termo{COM-matrix}) e classe de contorno (\termo{CC}) \note{fica
+  parecendo que matrizes de comparação e classes de contorno são
+  operações, acho bom mudar a vírgula de lugar ou algo assim}.
 
 A operação de comparação \termo{COM(a,b)} retorna a diferença de
 registro entre dois elementos, ou seja, informa se um elemento é mais
@@ -297,10 +303,11 @@ simplesmente \verb!#p(0 3)! com a macro de leitura. Da mesma maneira,
 um \texttt{contorno-duracao} com dois pontos pode ser instanciado com
 \verb!#d(#p(0 3) #p(1 4))! ao invés de usar \texttt{make-instance}.
 
-As operações em contornos são implementadas em métodos, aproveitando
-do despacho múltiplo usado pelo sistema de objetos de Common Lisp
-(CLOS). Desse modo um método como \texttt{transpor} vai se comportar
-de maneira diferente dependendo qual o tipo do seu primeiro parâmetro:
+As operações em contornos são implementadas em métodos,
+aproveitando-se do despacho múltiplo usado pelo sistema de objetos de
+Common Lisp (CLOS). Desse modo um método como \texttt{transpor} vai se
+comportar de maneira diferente dependendo qual o tipo do seu primeiro
+parâmetro:
 
 \begin{verbatim}
 (defmethod transpor ((objeto contorno-duracao) fator)
