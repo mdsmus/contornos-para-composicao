@@ -5,4 +5,7 @@
 *.ps
 *.pdf
 *.eps
+*lily/*.tex*
+*.midi
+*.log
 sobre-contornos.log
