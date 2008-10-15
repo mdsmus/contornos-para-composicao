@@ -5,7 +5,7 @@
 \usepackage{multicol}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage[dvips,dvipdfm,top=0cm,bottom=10cm,left=0cm,right=5cm,paperwidth=80cm,paperheight=100cm]{geometry}
+\usepackage[dvips,dvipdfm,top=0cm,bottom=8cm,left=0cm,right=5cm,paperwidth=80cm,paperheight=100cm]{geometry}
 
 % usar para termos estrangeiros
 \newcommand{\eng}[1]{\textit{#1}}
@@ -28,7 +28,7 @@
 \title{\goiaba{}: Um software para processar contornos}
 \author{\textbf{Marcos Sampaio e Pedro Kröger}}
 \institute{Genos---Grupo de pesquisa em computação musical}
-\email{mdsmus@gmail.com}
+\email{\{mdsmus,pedro.kroger\}@gmail.com}
 
 %% inserir nome do orientador
 %% inserir área, sub-área e sub-sub-área
@@ -41,7 +41,7 @@
 
 \bibliographystyle{plain}
 
-\conference{\Large \textbf{XXVII Seminário Estudantil de Pesquisa---2008
+\conference{\Large \textbf{IX Seminário de Pesquisa e Pós-Graduação---2008
     \hfill \textsf{Grupo de Pesquisa: GENOS}}}
 
 \maketitle
@@ -52,11 +52,10 @@
 
 Contornos podem ser entendidos como perfis ou formatos de objetos. Em
 Música contornos podem mapear um parâmetro em função de outro, como
-altura em função do tempo ou densidade em função da
-amplitude. Contornos são importantes porque ajudam a dar coerência
-musical a uma obra, assim como conjuntos de notas e motivos. Além
-disso são estruturas manipuláveis através de operações como inversão e
-retrogradação. 
+altura em função do tempo ou densidade em função da amplitude. São
+estruturas manipuláveis através de operações como inversão e
+retrogradação. Contornos são importantes porque ajudam a dar coerência
+musical a uma obra, assim como conjuntos de notas e motivos.
 
 As figuras \ref{fig:pitches-in-time},
 \ref{fig:chord-densities-in-time} e \ref{fig:dynamics-in-time} mostram
@@ -64,7 +63,7 @@ o mapeamento de altura, densidade e dinâmica a partir de um contorno
 representado graficamente na figura \ref{fig:repr-1023}.
 
 Teorias de contornos
-\cite{friedmann85:methodology,friedmann87:response,morris87:composition,morris93:directions,marvin.ea87:relating,clifford95:contour,polansky.ea92:possible,quinn97:fuzzy,beard03:contour}
+\cite{friedmann85:methodology,morris87:composition,morris93:directions,marvin.ea87:relating,clifford95:contour,polansky.ea92:possible,quinn97:fuzzy,beard03:contour}
 têm sido utilizadas em áreas como Percepção e Análise Musical, no
 entanto, apesar do atual estado de arte de ferramentas computacionais
 aplicadas a música, não existe um sistema computacional para
@@ -73,22 +72,19 @@ tarefas como cálculo automático de operações, plotagem de contornos, e
 conversão de partitura para contornos e vice-versa. Por esse motivo
 iniciamos o desenvolvimento do \goiaba{}.
 
-Utilizamos o conceito que considera contorno \textbf{um conjunto
-  ordenado de elementos distintos, com ou sem repetição, numerados de
-  forma ascendente} \cite[p. 206]{morris93:directions}. Esta numeração
-é feita atribuindo 0 para o elemento de menor valor, 1 para o segundo
-elemento de menor valor, 2 para o terceiro elemento de menor valor, e
-assim por diante. O valor do elemento depende do parâmetro que ele
-mapeia. Por exemplo, em um contorno de alturas a nota mais grave tem o
-menor valor. Em um contorno de densidade de acordes, o acorde de menor
-número de notas tem o menor valor.
+Consideramos que contorno é \textbf{um conjunto ordenado de elementos
+  distintos, com ou sem repetição, numerados de forma ascendente}
+\cite[p. 206]{morris93:directions}. Esta numeração é feita atribuindo
+0 para o elemento de menor valor, 1 para o segundo elemento de menor
+valor, 2 para o terceiro elemento de menor valor, e assim por
+diante. O valor do elemento depende do parâmetro que ele mapeia. Por
+exemplo, em um contorno de alturas a nota mais grave tem o menor
+valor.
 
 \section{O software Goiaba}
 
 O \goiaba{} é um software desenvolvido na linguagem Common Lisp
-\cite{graham94:lisp}, compilado com o \eng{Steel Bank Common Lisp}
-(SBCL) \cite{team07:sbcl} e com metodologia
-\eng{bottom-up}.
+\cite{graham94:lisp} e compilado com o SBCL \cite{team07:sbcl}.
 
 Contornos são representados simbolicamente de duas maneiras: como
 contornos simples, considerando apenas os valores dos elementos de
@@ -113,12 +109,11 @@ intervalo de contorno, vetor de classe de contorno I e II
 \cite{friedmann85:methodology} e matriz de comparação
 \cite{morris93:directions}.
 
-Finalmente, o \goiaba{} usa a biblioteca
-Cl-pdf\footnote{www.cliki.net/CL-PDF} para plotar contornos definidos,
-Por exemplo, o código da figura \ref{fig:gera-operacoes} gera um
-gráfico com o contorno original, sua transposição, retrogradação,
-inversão, rotação, ampliação de altura e inserção de ponto (figura
-\ref{fig:operacoes}).
+Finalmente, o \goiaba{} usa a biblioteca Cl-pdf para plotar contornos
+definidos, Por exemplo, o código da figura \ref{fig:gera-operacoes}
+gera um gráfico com o contorno original, sua transposição,
+retrogradação, inversão, rotação, ampliação de altura e inserção de
+ponto (figura \ref{fig:operacoes}).
 
 \end{multicols}
 
@@ -156,14 +151,6 @@ inversão, rotação, ampliação de altura e inserção de ponto (figura
 
 \begin{figure}
   \centering
-  \includegraphics[scale=1]{contornos}
-  \caption{Operações em contorno (0 5 3 4 1 3)}
-  \label{fig:operacoes}
-\end{figure}
-
-
-\begin{figure}
-  \centering
 \begin{verbatim}
 (defmethod transpor ((objeto contorno-duracao) fator)
   (map-contorno-duracao #L(transpor !1 fator) (pontos objeto)))
@@ -192,7 +179,14 @@ inversão, rotação, ampliação de altura e inserção de ponto (figura
   \label{fig:gera-operacoes}
   \caption{Código para gerar operações}
 \end{figure}
-  
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=.9]{contornos}
+  \caption{Operações em contorno (0 5 3 4 1 3)}
+  \label{fig:operacoes}
+\end{figure}
+
 \end{multicols}
 
 \end{center}
