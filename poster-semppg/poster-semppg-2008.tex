@@ -5,22 +5,13 @@
 \usepackage{multicol}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage[dvips,dvipdfm,top=0cm,bottom=0cm,left=0cm,right=6cm,paperwidth=80cm,paperheight=100cm]{geometry}
 
 % usar para termos estrangeiros
 \newcommand{\eng}[1]{\textit{#1}}
 \newcommand{\goiaba}[1]{\textit{Goiaba}}
 
-\renewcommand{\papertype}{custom}
 \renewcommand{\fontpointsize}{25pt}
-
-\setlength{\paperwidth}{80cm}
-\setlength{\paperheight}{100cm}
-\renewcommand{\setpspagesize}{
-  \ifthenelse{\equal{\orientation}{portrait}}{
-    \special{papersize=80cm,100cm}
-    }{\special{papersize=100cm,80cm}
-    }
-  }
 
 \definecolor{SectionCol}{rgb}{1,1,1}
 \definecolor{BoxCol}{rgb}{.230,.230,.76}
@@ -80,14 +71,6 @@ Composição Musical.
 
 \section{Teorias de contorno}
 
-Teorias que visam sistematizar o estudo de contornos dispõem de várias
-operações para mapeamento e comparação de contornos
-\cite{friedmann85:methodology,friedmann87:response,morris87:composition,morris93:directions,marvin.ea87:relating,clifford95:contour,polansky.ea92:possible,quinn97:fuzzy,beard03:contour}
-. A partir das idéias destas teorias é possível, por exemplo,
-reconhecer semelhanças entre as duas melodias de quatro notas da
-figura \ref{fig:ly-cseg-5968}, cujo contorno está representado em
-gráfico cartesiano na figura \ref{fig:cseg-5968}.
-
 \section{O Goiaba}
 
 \end{multicols}
@@ -107,7 +90,6 @@ gráfico cartesiano na figura \ref{fig:cseg-5968}.
   \includegraphics[scale=2]{ly-5768}
   \label{fig:ly-cseg-5768}
   \caption{melodias com contorno (5 7 6 8)}
-}
 \end{figure}
 \begin{figure}
   \centering
@@ -123,13 +105,14 @@ gráfico cartesiano na figura \ref{fig:cseg-5968}.
   \label{fig:ly-cseg-5968}
   \caption{gráficos com contorno (5 9 6 8)}
 \end{figure}
+
 \begin{figure}
   \centering
   \includegraphics[scale=2]{c-5768}
   \label{fig:ly-cseg-5768}
   \caption{gráficos com contorno (5 7 6 8)}
-}
 \end{figure}
+
 \begin{figure}
   \centering
     \includegraphics[scale=2]{c-3051}
