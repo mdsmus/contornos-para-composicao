@@ -53,19 +53,46 @@ Contorno pode ser definido como o perfil, desenho ou formato de um
 objeto. Pode ser bidimensional e associar altura a comprimento,
 largura ou tempo. Em música contornos podem ser associados a altura,
 densidade, ritmo, complexidade rítmica, homogeneidade orquestral,
-amplitude de harmônicos, intensidade, etc. Utilizamos o conceito que
-considera contorno \textbf{um conjunto ordenado de elementos
-  distintos, com ou sem repetição, numerados de forma ascendente}
-\cite[p. 206]{morris93:directions}.
+amplitude de harmônicos, intensidade, etc. 
 
 Contornos ajudam a dar coerência musical a uma obra assim como
 conjuntos de notas e motivos, representam estruturas musicais
 manipuláveis através de várias operações como inversão e
 retrogradação, e podem ser abordados tanto do ponto de vista da
 análise quanto da composição. Dessa forma um software para processar
-contornos pode contribuir com a área de Composição Musical.
+contornos pode contribuir com a área de Composição Musical. A figura
+\ref{fig:cseg-0312} mostra a representação do contorno das duas
+melodias da figura \ref{fig:ly-0312}.
 
 \section{Teorias de contorno}
+
+Existem várias operações de mapeamento e comparação de contornos nas
+teorias desenvolvidas para sistematização do estudo de contornos.
+\cite{friedmann85:methodology,friedmann87:response,morris87:composition,morris93:directions,marvin.ea87:relating,clifford95:contour,polansky.ea92:possible,quinn97:fuzzy,beard03:contour}.
+
+Utilizamos o conceito que considera contorno \textbf{um conjunto
+  ordenado de elementos distintos, com ou sem repetição, numerados de
+  forma ascendente} \cite[p. 206]{morris93:directions}. Esta numeração
+é feita atribuindo 0 para o elemento de menor valor, 1 para o segundo
+elemento de menor valor, 2 para o terceiro elemento de menor valor, e
+assim por diante. O valor do elemento depende do parâmetro que ele
+mapeia. Por exemplo, em um contorno de alturas a nota mais grave tem o
+menor valor. Em um contorno de densidade de acordes, o acorde de menor
+número de notas tem o menor valor.
+
+A partir dos conceitos e operações destas teorias é possível, por
+exemplo, reconhecer semelhanças entre as alturas das duas melodias m1
+e m2 da figura \ref{fig:ly-0312}, cujo contorno está representado
+graficamente na figura \ref{fig:cseg-0312} e simbolicamente por (0 3 1
+2).  As semelhanças entre estas melodias da figura \ref{fig:ly-0312}
+são identificadas apenas com a observação dos seus contornos.
+
+As operações de teorias de contorno são inversão, retrogradação,
+comparação e matriz de comparação de valores de elementos
+\cite{morris87:composition}, comparação entre elementos adjacentes e
+não adjacentes, classe de contornos equivalentes
+\cite{marvin.ea87:relating}, forma prima, forma normal, redução
+\cite{adams76:melodic},
 
 \section{O Goiaba}
 
@@ -75,48 +102,20 @@ contornos pode contribuir com a área de Composição Musical.
 
 \begin{multicols}{2}
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=2]{ly-5968}
-  \label{fig:ly-cseg-5968}
-  \caption{Melodias com contorno (5 9 6 8)}
-\end{figure}
-\begin{figure}
-  \centering
-  \includegraphics[scale=2]{ly-5768}
-  \label{fig:ly-cseg-5768}
-  \caption{melodias com contorno (5 7 6 8)}
-\end{figure}
-\begin{figure}
-  \centering
-    \includegraphics[scale=2]{ly-3051}
-    \label{fig:ly-cseg-3051}
-    \caption{melodias com contorno (3 0 5 1)}
-  \label{fig:melodias-cseg}
-\end{figure}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=2]{ly-0312}
+    \caption{Melodias de contorno P(0 3 1 2)}
+    \label{fig:ly-0312}
+  \end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=2]{c-5968}
-  \label{fig:ly-cseg-5968}
-  \caption{gráficos com contorno (5 9 6 8)}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=2]{c-5768}
-  \label{fig:ly-cseg-5768}
-  \caption{gráficos com contorno (5 7 6 8)}
-\end{figure}
-
-\begin{figure}
-  \centering
-    \includegraphics[scale=2]{c-3051}
-    \label{fig:ly-cseg-3051}
-    \caption{gráficos com contorno (3 0 5 1)}
-  \label{fig:melodias-cseg}
-\end{figure}
-
+  \begin{figure}
+    \centering
+    \includegraphics[scale=2]{c-0312}
+    \caption{Representações gráficas do contorno P(0 3 1 2)}
+    \label{fig:cseg-0312}
+  \end{figure}
+  
 \end{multicols}
 
 \end{center}
@@ -129,7 +128,6 @@ contornos pode contribuir com a área de Composição Musical.
 
 \renewcommand{\refname}{Bibliografia}
 
-\bibliographystyle{plain}
 \bibliography{melodic-contour,music-harmony-and-theory,composition}
 
 \end{multicols}
