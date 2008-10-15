@@ -5,11 +5,12 @@
 \usepackage{multicol}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage[dvips,dvipdfm,top=0cm,bottom=0cm,left=0cm,right=6cm,paperwidth=80cm,paperheight=100cm]{geometry}
+\usepackage[dvips,dvipdfm,top=0cm,bottom=10cm,left=0cm,right=5cm,paperwidth=80cm,paperheight=100cm]{geometry}
 
 % usar para termos estrangeiros
 \newcommand{\eng}[1]{\textit{#1}}
 \newcommand{\goiaba}[1]{\textit{Goiaba}}
+\newcommand{\code}[1]{\texttt{#1}}
 
 \renewcommand{\fontpointsize}{25pt}
 
@@ -49,26 +50,28 @@
 
 \section{Introdução}
 
-Contorno pode ser definido como o perfil, desenho ou formato de um
-objeto. Pode ser bidimensional e associar altura a comprimento,
-largura ou tempo. Em música contornos podem ser associados a altura,
-densidade, ritmo, complexidade rítmica, homogeneidade orquestral,
-amplitude de harmônicos, intensidade, etc. 
+Contornos podem ser entendidos como perfis ou formatos de objetos. Em
+Música contornos podem mapear um parâmetro em função de outro, como
+altura em função do tempo ou densidade em função da
+amplitude. Contornos são importantes porque ajudam a dar coerência
+musical a uma obra, assim como conjuntos de notas e motivos. Além
+disso são estruturas manipuláveis através de operações como inversão e
+retrogradação. 
 
-Contornos ajudam a dar coerência musical a uma obra assim como
-conjuntos de notas e motivos, representam estruturas musicais
-manipuláveis através de várias operações como inversão e
-retrogradação, e podem ser abordados tanto do ponto de vista da
-análise quanto da composição. Dessa forma um software para processar
-contornos pode contribuir com a área de Composição Musical. A figura
-\ref{fig:cseg-0312} mostra a representação do contorno das duas
-melodias da figura \ref{fig:ly-0312}.
+As figuras \ref{fig:pitches-in-time},
+\ref{fig:chord-densities-in-time} e \ref{fig:dynamics-in-time} mostram
+o mapeamento de altura, densidade e dinâmica a partir de um contorno
+representado graficamente na figura \ref{fig:repr-1023}.
 
-\section{Teorias de contorno}
-
-Existem várias operações de mapeamento e comparação de contornos nas
-teorias desenvolvidas para sistematização do estudo de contornos.
-\cite{friedmann85:methodology,friedmann87:response,morris87:composition,morris93:directions,marvin.ea87:relating,clifford95:contour,polansky.ea92:possible,quinn97:fuzzy,beard03:contour}.
+Teorias de contornos
+\cite{friedmann85:methodology,friedmann87:response,morris87:composition,morris93:directions,marvin.ea87:relating,clifford95:contour,polansky.ea92:possible,quinn97:fuzzy,beard03:contour}
+têm sido utilizadas em áreas como Percepção e Análise Musical, no
+entanto, apesar do atual estado de arte de ferramentas computacionais
+aplicadas a música, não existe um sistema computacional para
+processamento de contornos que auxilie o compositor ou analista com
+tarefas como cálculo automático de operações, plotagem de contornos, e
+conversão de partitura para contornos e vice-versa. Por esse motivo
+iniciamos o desenvolvimento do \goiaba{}.
 
 Utilizamos o conceito que considera contorno \textbf{um conjunto
   ordenado de elementos distintos, com ou sem repetição, numerados de
@@ -80,21 +83,42 @@ mapeia. Por exemplo, em um contorno de alturas a nota mais grave tem o
 menor valor. Em um contorno de densidade de acordes, o acorde de menor
 número de notas tem o menor valor.
 
-A partir dos conceitos e operações destas teorias é possível, por
-exemplo, reconhecer semelhanças entre as alturas das duas melodias m1
-e m2 da figura \ref{fig:ly-0312}, cujo contorno está representado
-graficamente na figura \ref{fig:cseg-0312} e simbolicamente por (0 3 1
-2).  As semelhanças entre estas melodias da figura \ref{fig:ly-0312}
-são identificadas apenas com a observação dos seus contornos.
+\section{O software Goiaba}
 
-As operações de teorias de contorno são inversão, retrogradação,
-comparação e matriz de comparação de valores de elementos
-\cite{morris87:composition}, comparação entre elementos adjacentes e
-não adjacentes, classe de contornos equivalentes
-\cite{marvin.ea87:relating}, forma prima, forma normal, redução
-\cite{adams76:melodic},
+O \goiaba{} é um software desenvolvido na linguagem Common Lisp
+\cite{graham94:lisp}, compilado com o \eng{Steel Bank Common Lisp}
+(SBCL) \cite{team07:sbcl} e com metodologia
+\eng{bottom-up}.
 
-\section{O Goiaba}
+Contornos são representados simbolicamente de duas maneiras: como
+contornos simples, considerando apenas os valores dos elementos de
+contorno \code{(5 9 6)}, e como contornos com duração, considerando
+também o local no tempo onde ocorre cada elemento do contorno:
+\code{((0 5)(1 9)(2 6))}.
+
+As operações em contornos são implementadas em métodos, aproveitando
+do despacho múltiplo usado pelo sistema de objetos de Common Lisp
+(CLOS). Desse modo um método como \texttt{transpor} se comporta de
+maneira diferente dependendo qual o tipo do seu primeiro parâmetro. No
+código da figura \ref{fig:metodos} há dois métodos, sendo o primeiro
+para a classe \code{contorno-duracao}, e o segundo para a classe
+\code{contorno-simples}.
+
+O \goiaba{} tem diversas operações para lidar com contornos, como
+tranposição, inversão, retrogradação, rotação e expansão de
+intervalos, como redução de contornos \cite{adams76:melodic}, classe
+de contornos equivalentes , série de contornos adjacentes, vetor de
+séries de contornos adjacentes, intervalo de contorno, vetor de
+intervalo de contorno, vetor de classe de contorno I e II
+\cite{friedmann85:methodology} e matriz de comparação
+\cite{morris93:directions}.
+
+Finalmente, o \goiaba{} usa a biblioteca
+Cl-pdf\footnote{www.cliki.net/CL-PDF} para plotar contornos definidos,
+Por exemplo, o código da figura \ref{fig:gera-operacoes} gera um
+gráfico com o contorno original, sua transposição, retrogradação,
+inversão, rotação, ampliação de altura e inserção de ponto (figura
+\ref{fig:operacoes}).
 
 \end{multicols}
 
@@ -104,17 +128,70 @@ não adjacentes, classe de contornos equivalentes
 
   \begin{figure}
     \centering
-    \includegraphics[scale=2]{ly-0312}
-    \caption{Melodias de contorno P(0 3 1 2)}
-    \label{fig:ly-0312}
+    \includegraphics[scale=2]{pitches-in-time}
+    \caption{Alturas no tempo}
+    \label{fig:pitches-in-time}
   \end{figure}
 
   \begin{figure}
     \centering
-    \includegraphics[scale=2]{c-0312}
-    \caption{Representações gráficas do contorno P(0 3 1 2)}
-    \label{fig:cseg-0312}
+    \includegraphics[scale=2]{chord-densities-in-time}
+    \caption{Densidade de acordes no tempo}
+    \label{fig:chord-densities-in-time}
   \end{figure}
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=2]{dynamics-in-time}
+    \caption{Dinâmicas no tempo}
+    \label{fig:dynamics-in-time}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=2]{c-1023}
+    \caption{Representação do contorno (1 0 2 3)}
+    \label{fig:repr-1023}
+  \end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{contornos}
+  \caption{Operações em contorno (0 5 3 4 1 3)}
+  \label{fig:operacoes}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+\begin{verbatim}
+(defmethod transpor ((objeto contorno-duracao) fator)
+  (map-contorno-duracao #L(transpor !1 fator) (pontos objeto)))
+
+(defmethod transpor ((objeto contorno-simples) fator)
+  (map-contorno-simples #L(+ !1 fator) (pontos objeto)))
+\end{verbatim}
+  \label{fig:metodos}
+  \caption{Métodos para transposição}
+\end{figure}
+
+\begin{figure}
+  \centering
+\begin{verbatim}
+(let ((c1 #d(#p(0 0) #p(1 5) #p(2 3) #p(3 4) #p(4 1) #p(5 3))))
+  (plot-page "contornos.pdf"
+    (plot-contorno-full 50 500
+       c1 "original" :red
+       (transpor c1 2) "transposição" :green
+       (retrogradar c1) "retrógrado" :blue
+       (inverter c1) "inversão" :pink
+       (aumentar-altura c1 2) "aumentar-altura" :lightblue
+       (rotacionar c1 1) "rotação" :darkcyan
+       (insere-ponto c1 '(1 3) 2) "insere ponto" :purple)))
+\end{verbatim}
+  \label{fig:gera-operacoes}
+  \caption{Código para gerar operações}
+\end{figure}
   
 \end{multicols}
 
@@ -122,13 +199,23 @@ não adjacentes, classe de contornos equivalentes
 
 \begin{multicols}{3}
 
-\section{Contornos em Composição}
-
 \section{Conclusão}
+
+Contornos têm se mostrado úteis para a composição. Até o momento
+verificamos a utilidade das operações de inversão, transposição,
+retrogradação, rotação, expansão de intervalos, INT$_1$, redução e
+preenchimento.
+
+O \goiaba{} tem se mostrado útil tanto para entender contornos quanto
+como ferramenta auxiliar à composição musical. Damos prosseguimento ao
+seu desenvolvimento com a revisão das teorias de contornos, a
+implementação das operações, e a composição de pequenas peças musicais
+como experimentos. Esperamos criar uma interface gráfica e via linha
+de comando para lançar a primeira versão do software.
 
 \renewcommand{\refname}{Bibliografia}
 
-\bibliography{melodic-contour,music-harmony-and-theory,composition}
+\bibliography{melodic-contour,music-perception,composition,music-harmony-and-theory,programs,music-analysis,audio,genos,computer-science}
 
 \end{multicols}
 
