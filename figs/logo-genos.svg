@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   width="210mm"
+   height="297mm"
+   sodipodi:docbase="/home/marcos/profissional/genos/genos-repos/artigo-contornos-webern-op-5/apresentacao-forum-ppgmus/figs"
+   sodipodi:docname="logo-genos.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs5">
+    <linearGradient
+       id="linearGradient8186">
+      <stop
+         style="stop-color:#1913ff;stop-opacity:1;"
+         offset="0"
+         id="stop8188" />
+      <stop
+         style="stop-color:#d9e8f1;stop-opacity:1;"
+         offset="1"
+         id="stop8190" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8186"
+       id="linearGradient8204"
+       gradientUnits="userSpaceOnUse"
+       x1="80.712776"
+       y1="299.86319"
+       x2="89.079346"
+       y2="329.76135" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8186"
+       id="linearGradient8206"
+       gradientUnits="userSpaceOnUse"
+       x1="80.712776"
+       y1="299.86319"
+       x2="89.079346"
+       y2="329.76135" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8186"
+       id="linearGradient8208"
+       gradientUnits="userSpaceOnUse"
+       x1="80.712776"
+       y1="299.86319"
+       x2="89.079346"
+       y2="329.76135" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8186"
+       id="linearGradient9127"
+       gradientUnits="userSpaceOnUse"
+       x1="80.712776"
+       y1="299.86319"
+       x2="89.079346"
+       y2="329.76135" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8186"
+       id="linearGradient9129"
+       gradientUnits="userSpaceOnUse"
+       x1="80.712776"
+       y1="299.86319"
+       x2="89.079346"
+       y2="329.76135" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8186"
+       id="linearGradient9131"
+       gradientUnits="userSpaceOnUse"
+       x1="80.712776"
+       y1="299.86319"
+       x2="89.079346"
+       y2="329.76135" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8186"
+       id="linearGradient9195"
+       gradientUnits="userSpaceOnUse"
+       x1="-320.04376"
+       y1="219.625"
+       x2="-220.05788"
+       y2="299.40738"
+       gradientTransform="translate(1.392016,-17.40017)" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-height="783"
+     inkscape:window-width="1278"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:zoom="2.6000344"
+     inkscape:cx="100.00001"
+     inkscape:cy="943.13286"
+     inkscape:window-x="0"
+     inkscape:window-y="15"
+     inkscape:current-layer="svg2"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <g
+     id="g10082"
+     inkscape:export-xdpi="50"
+     inkscape:export-ydpi="50"
+     transform="matrix(2.0004729,0,0,2.0004729,637.45418,-404.54529)">
+    <path
+       id="path9135"
+       d="M -268.52333,250.96475 L -268.80379,233.18727"
+       style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:0.62069267;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path9141"
+       d="M -256.51423,202.22483 C -293.37719,206.83557 -325.12768,229.64567 -317.51423,255.41233 C -312.90312,271.01798 -288.54903,286.82088 -263.23298,280.63108 L -263.23298,280.75608 C -258.37425,279.33905 -253.7321,277.73108 -249.35798,275.91233 C -219.83775,263.63784 -195.39376,216.41391 -256.70173,218.25608 L -257.29548,241.25608 C -245.57693,240.56408 -250.0981,251.17682 -255.54548,253.91233 C -270.30752,261.32539 -290.09091,253.10062 -296.26423,243.56858 C -307.30684,226.51801 -287.85108,208.32879 -262.60798,203.25608 C -260.60807,202.8542 -258.56904,202.51544 -256.51423,202.25608 L -256.51423,202.22483 z "
+       style="fill:url(#linearGradient9195);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.34530589;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       transform="scale(1.179493,0.847822)"
+       id="text9147"
+       y="362.49106"
+       x="-257.64102"
+       style="font-size:17.46006012px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#6264fc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:URW Gothic L"
+       xml:space="preserve"><tspan
+         y="362.49106"
+         x="-257.64102"
+         id="tspan9149"
+         sodipodi:role="line">GENOS</tspan></text>
+  </g>
+</svg>
