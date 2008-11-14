@@ -1,0 +1,50 @@
+* cumprimentos
+* introdução
+** definições
+*** perfis, desenhos ou formatos de objetos
+*** contornos em música
+**** podem ser associados a
+***** altura - contornos melódicos (ex. partitura)
+***** densidade
+***** ritmo
+***** homogeneidade de timbre
+***** intensidade
+*** conjunto ordenado de elementos enumerados de forma ascendente
+**** 5a sinfonia
+**** (3 1 2 0)
+** melodias com semelhança de contornos
+** objetivos e justificativa
+*** coerência
+*** estruturas manipuláveis por operações
+*** estudos escassos
+*** objetivo: desenvolvimento de processador de operações de contornos
+** representações
+*** de contorno
+**** simbólica
+**** gráfica
+*** de operações
+**** simples
+**** concatenação
+** operações implementadas
+*** ver no goiaba!!!!
+**** o que é o goiaba e para que serve
+* goiaba
+** autoria: marcos e pedro
+** desenvolvimento
+*** common lisp e sbcl
+*** bottom-up
+*** orientação a objetos
+** ir para o goiaba
+*** representações
+*** classes e macros
+*** funções
+*** plotagem
+*** saída
+* conclusões
+** discussão
+*** programação como metodologia de estudo
+** trabalhos futuros
+*** conversão de/para partituras musicais
+*** gui
+*** versão estável
+*** api fácil de usar
