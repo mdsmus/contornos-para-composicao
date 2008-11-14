@@ -30,24 +30,25 @@
 \subsection{Definições}
 
 \frame{
-  \frametitle{O que são contornos?}
-  Conjunto ordenado de elementos distintos com ou sem repetição,
-  numerados de forma ascendente \cite{morris93:directions}.
-
+  \frametitle{Contornos em Música}
   \begin{figure}
     \centering
-    \includegraphics[scale=.7]{5a-sinfonia}
-    \caption{Fragmento da 5ª Sinfonia de Beethoven}
+    \includegraphics[scale=.9]{5a-sinfonia}
   \end{figure}
 
-  \begin{itemize}
-  \item Representação simbólica: (3 1 2 0)
-  \end{itemize}
-
   \begin{figure}
     \centering
-    \includegraphics[scale=.8]{c-3120}
-    \caption{Contorno da melodia}
+    \includegraphics[scale=1.4]{c-3120}
+  \end{figure}
+}
+
+\frame{
+  \frametitle{Semelhança e coerência}
+  \begin{figure}
+    \centering
+    \includegraphics{ly-2031}
+    \hspace{1em}
+    \includegraphics[scale=1.4]{c-2031}
   \end{figure}
 }
 
@@ -56,18 +57,15 @@
 \frame{
   \frametitle{Objetivo e justificativas}
   \begin{itemize}
-  \item Objetivo do software \goiaba{}: processar operações com
-    contornos musicais
-  \item Justificativas:
+  \item Justificativa
     \begin{itemize}
-    \item contornos ajudam a dar coerência a uma obra musical
-
-      \cite{clifford95:contour}
-    \item contornos podem ser manipulados através de operações como
-      inversão e retrogradação
-    \item um software para processamento de contornos pode efetuar os
-      cálculos matemáticos das operações de contorno com rapidez e
-      precisão nos resultados e pode plotar contornos
+    \item Coerência
+    \item Manipulação por operações
+    \item Estudos escassos
+    \end{itemize}
+  \item Objetivo
+    \begin{itemize}
+    \item Software para processar contornos
     \end{itemize}
   \end{itemize}
 }
@@ -76,23 +74,18 @@
 
 \frame{
   \frametitle{Representações de contornos}
-  \begin{columns}[t]
-
-    \column{6cm}
-  \begin{enumerate}
+  \begin{itemize}
   \item Representação simbólica
     \begin{itemize}
     \item Contorno: Z(2 0 3 1)
     \item Elementos: Z$_0=2$, Z$_1=0$, Z$_2=3$ e Z$_3=1$
     \end{itemize}
   \item Representação gráfica
-
-    \includegraphics[scale=.6]{c-2031}
-  \end{enumerate}
-
-    \column[T]{4cm}
-  \includegraphics[scale=.5]{ly-2031}
-  \end{columns}
+    \begin{figure}
+      \centering
+      \includegraphics[scale=1.5]{c-2031}
+    \end{figure}
+  \end{itemize}
 }
 
 \frame{
@@ -120,9 +113,10 @@
   \item Vetores I e II de classes de contorno
   \item Matriz de comparação
   \end{enumerate}
+  (ver no Goiaba)
 }
 
-\frame {
+ \frame {
   \frametitle{Retrógrado e inversão}
   \begin{table}
     \centering
@@ -176,7 +170,6 @@
   \includegraphics[scale=.5]{expansao}
 \end{figure}
 }
-
 \section{O Goiaba}
 
 \frame{
@@ -194,6 +187,7 @@
   \item Contornos simples: \code{(5 9 6)}
   \item Contornos com duração: \code{((0 5)(1 9)(2 6))}
   \end{itemize}
+  (ver no Goiaba)
 }
 
 \frame{
