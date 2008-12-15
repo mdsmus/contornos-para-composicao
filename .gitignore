@@ -5,4 +5,14 @@
 *.ps
 *.pdf
 *.eps
+*lily/*.tex*
+*.midi
+*.log
 sobre-contornos.log
+*.nav
+*.out
+*~
+*.toc
+*.toc.old
+*.snm
+*.vrb
